@@ -1,6 +1,7 @@
-// components/InputField.tsx
-import React from 'react';
-import { LucideIcon, EyeOff } from 'lucide-react';
+"use client";
+
+import React, { useState } from 'react';
+import { LucideIcon, Eye, EyeOff } from 'lucide-react';
 
 interface InputFieldProps {
   label: string;
@@ -11,6 +12,18 @@ interface InputFieldProps {
 }
 
 export const InputField = ({ label, placeholder, type = "text", Icon, showPasswordToggle }: InputFieldProps) => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  // Determine current input type
+  const currentType = showPasswordToggle 
+    ? (isPasswordVisible ? "text" : "password") 
+    : type;
+
+  const toggleVisibility = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
   return (
     <div className="space-y-2 w-full">
       <label className="text-gray-400 text-sm font-medium">{label}</label>
@@ -19,13 +32,18 @@ export const InputField = ({ label, placeholder, type = "text", Icon, showPasswo
           <Icon size={18} />
         </div>
         <input
-          type={type}
+          type={currentType}
           placeholder={placeholder}
           className="w-full bg-transparent border border-gray-800 rounded-lg py-3 pl-12 pr-12 text-gray-300 focus:outline-none focus:border-gray-600 transition-colors"
         />
         {showPasswordToggle && (
-          <button className="absolute right-4 text-gray-500 hover:text-gray-300">
-            <EyeOff size={18} />
+          <button 
+            type="button"
+            onClick={toggleVisibility}
+            className="absolute right-4 text-gray-500 hover:text-gray-300 focus:outline-none"
+            aria-label={isPasswordVisible ? "Hide password" : "Show password"}
+          >
+            {isPasswordVisible ? <Eye size={18} /> : <EyeOff size={18} />}
           </button>
         )}
       </div>
