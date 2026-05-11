@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { LucideIcon, Eye, EyeOff } from 'lucide-react';
 
 interface InputFieldProps {

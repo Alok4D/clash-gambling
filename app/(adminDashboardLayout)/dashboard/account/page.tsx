@@ -1,4 +1,3 @@
-// app/settings/page.tsx
 
 import { ChangePassword, ProfileInfo } from "./_components/SettingsSections";
 
