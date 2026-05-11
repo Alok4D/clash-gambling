@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clash Admin Dashboard - Implementation Updates
 
-## Getting Started
+## 🎨 Design & Typography
+- **Montserrat Font Integration**: Successfully integrated the Montserrat font family across the entire dashboard to match brand identity.
+- **Logo Refinement**: Updated the "Sharp Matrix AI" sidebar logo with specific typography specs (18px, Medium weight, -1px tracking).
+- **Header Spec Compliance**: Applied high-fidelity typography to the User Header:
+  - **Name**: Montserrat, 18px, Regular (400), 32px line-height.
+  - **Email**: Montserrat, 13px, Medium (500), 16px line-height, optimized for dark mode (gray-200).
 
-First, run the development server:
+## 🚀 Interactive Components
+- **Subscription Management**:
+  - **Invite User Modal**: Built a custom interactive modal with backdrop blur and duration selection (7, 30, 90 days, Unlimited).
+  - **Edit Subscription Modal**: Implemented a responsive edit interface for plan management.
+- **Account Settings**:
+  - **Profile Photo Upload**: Enabled interactive photo selection and preview from local storage.
+  - **Password Visibility**: Fixed the password toggle functionality using React state management.
+  - **Responsive Layout**: Reorganized settings inputs into a mobile-friendly grid system.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📊 Data Visualization & Tables
+- **Shadcn UI Table Migration**: Replaced legacy HTML tables with modern Shadcn UI Table components.
+  - **Benefits**: Improved responsiveness, built-in horizontal scrolling, and standardized styling.
+  - **Design Retention**: Maintained original dark theme colors (#0D1117 background) and hover states (#161B22).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📱 Responsiveness & UX
+- **Header Responsiveness**: Optimized the dashboard header to stack on mobile devices, ensuring the "Invite User" button remains accessible.
+- **Subscription Page Layout**: Centered cards and adjusted container padding for a seamless mobile experience.
+- **Navigation**: Integrated direct links from the Header Avatar to the Account Settings page for faster navigation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Last Updated: May 11, 2026*
