@@ -2,6 +2,7 @@ import { FilterOptions } from "./dashboard-overview/_component/FilterOptions";
 import { MarketTable } from "./dashboard-overview/_component/MarketTable";
 import { OpportunityCard } from "./dashboard-overview/_component/OpportunityCard";
 import { PaginationUser } from "./dashboard-overview/_component/PaginationUser";
+import { marketData } from "./dashboard-overview/_constants/marketData";
 
 interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -11,7 +12,14 @@ export default async function OpportunitiesPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = typeof params.page === 'string' ? parseInt(params.page) : 1;
   const currentPage = isNaN(page) ? 1 : page;
-  const totalPages = 5;
+  
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(marketData.length / itemsPerPage);
+  
+  // Calculate the slice for current page
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedData = marketData.slice(startIndex, startIndex + itemsPerPage);
+
   return (
     <div className="min-h-screen">
       <div className="max-w-full mx-auto space-y-12">
@@ -26,7 +34,7 @@ export default async function OpportunitiesPage({ searchParams }: PageProps) {
 
         <section>
           <FilterOptions />
-          <MarketTable />
+          <MarketTable data={paginatedData} />
           <PaginationUser 
             currentPage={currentPage} 
             totalPages={totalPages} 

@@ -2,13 +2,19 @@
 import { Bookmark, Eye, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 
-const tableData = [
-  { game: "Warriors @ Lakers", league: "NBA", confidence: 89, odds: "-4.5 (-110)", score: 89, ev: "+9.2%", signal: "Sharp Money", movement: "+1.5", type: 'green' },
-  { game: "Bills @ Chiefs", league: "NFL", confidence: 90, odds: "-4.5 (-110)", score: 89, ev: "+9.2%", signal: "Market Support", movement: "+1.5", type: 'blue' },
-  { game: "Red Sox @ Yankees", league: "MLB", confidence: 40, odds: "-4.5 (-110)", score: 54, ev: "-5.2%", signal: "Market Resistance", movement: "+1.5", type: 'red' },
-];
+interface MarketRow {
+  game: string;
+  league: string;
+  confidence: number;
+  odds: string;
+  score: number;
+  ev: string;
+  signal: string;
+  movement: string;
+  type: string;
+}
 
-export const MarketTable = () => (
+export const MarketTable = ({ data }: { data: MarketRow[] }) => (
   <div className="bg-[#0D1117] border border-[#064E3B]/30 rounded-xl overflow-hidden mt-8">
     <table className="w-full text-left">
       <thead className="text-gray-500 text-sm border-b border-[#1F2937]">
@@ -24,7 +30,7 @@ export const MarketTable = () => (
         </tr>
       </thead>
       <tbody className="text-gray-300">
-        {tableData.map((row, i) => (
+        {data.map((row, i) => (
           <tr key={i} className="border-b border-[#1F2937]/50 hover:bg-[#161B22]">
             <td className="px-6 py-5 text-sm">
               {row.game} <span className="text-gray-600 text-[10px]">({row.league})</span>
