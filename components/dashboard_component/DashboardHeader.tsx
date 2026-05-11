@@ -27,10 +27,10 @@ export function DashboardHeader() {
             </AvatarFallback>
           </Avatar>
           <div className="hidden sm:block text-left">
-            <p className="text-sm font-semibold font-montserrat text-white leading-tight">
+            <p className="text-[18px] font-normal font-montserrat text-white leading-[32px]">
               Clash Admin
             </p>
-            <p className="text-[12px] font-medium font-montserrat text-gray-400 leading-[16px]">
+            <p className="text-[13px] font-medium font-montserrat text-gray-200 leading-[16px]">
               democlash@gmail.com
             </p>
           </div>
