@@ -8,7 +8,7 @@ export const Pagination = () => {
         <ChevronLeft size={20} />
       </button>
       
-      <button className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#064E3B] text-[#10B981] font-bold">
+      <button className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#064E3B] text-[#10B981] font-medium">
         1
       </button>
       
