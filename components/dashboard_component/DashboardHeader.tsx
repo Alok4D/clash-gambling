@@ -8,9 +8,9 @@ export function DashboardHeader() {
     <div className="w-full border-b border-[#00FF88]/20 py-4 px-6 z-40 bg-[#181818]">
       <div className="w-full mx-auto flex justify-between items-center gap-4">
         <div className="flex-1">
-          <h1 className="text-[20px] sm:text-[20px] font-medium text-white font-montserrat">
+          {/* <h1 className="text-[20px] sm:text-[20px] font-medium text-white font-montserrat">
             Welcome to Clash Admin Dashboard
-          </h1>
+          </h1> */}
         </div>
 
         {/* Right side - User info */}

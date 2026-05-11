@@ -1,3 +1,12 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 interface UserEntry {
   name: string;
   email: string;
@@ -13,22 +22,22 @@ interface UserTableProps {
 export const UserTable = ({ entries }: UserTableProps) => {
   return (
     <div className="bg-[#0D1117] border border-[#1F2937] rounded-xl overflow-hidden">
-      <table className="w-full text-left border-collapse">
-        <thead>
-          <tr className="text-gray-400 font-medium text-sm border-b border-[#1F2937]">
-            <th className="px-6 py-5 font-normal">User name</th>
-            <th className="px-6 py-5 font-normal">Email</th>
-            <th className="px-6 py-5 font-normal">Access Type</th>
-            <th className="px-6 py-5 font-normal">Status</th>
-            <th className="px-6 py-5 font-normal">Valid Until</th>
-          </tr>
-        </thead>
-        <tbody className="text-gray-300">
+      <Table>
+        <TableHeader>
+          <TableRow className="text-gray-400 font-medium text-sm border-b border-[#1F2937] hover:bg-transparent">
+            <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">User name</TableHead>
+            <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">Email</TableHead>
+            <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">Access Type</TableHead>
+            <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">Status</TableHead>
+            <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">Valid Until</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody className="text-gray-300 border-none">
           {entries.map((user, index) => (
-            <tr key={index} className="hover:bg-[#161B22] transition-colors">
-              <td className="px-6 py-5">{user.name}</td>
-              <td className="px-6 py-5 text-gray-400">{user.email}</td>
-              <td className="px-6 py-5">
+            <TableRow key={index} className="border-b border-[#1F2937] last:border-0 hover:bg-[#161B22] transition-colors">
+              <TableCell className="px-6 py-5 font-medium text-gray-300">{user.name}</TableCell>
+              <TableCell className="px-6 py-5 text-gray-400">{user.email}</TableCell>
+              <TableCell className="px-6 py-5">
                 <span className={
                   user.access === "Monthly" || user.access === "Annual" 
                   ? "text-[#22C55E]" 
@@ -36,8 +45,8 @@ export const UserTable = ({ entries }: UserTableProps) => {
                 }>
                   {user.access}
                 </span>
-              </td>
-              <td className="px-6 py-5">
+              </TableCell>
+              <TableCell className="px-6 py-5">
                 <span className={`px-4 py-1 rounded-full text-xs font-medium ${
                   user.status === "Active" 
                   ? "bg-[#064E3B] text-[#10B981]" 
@@ -45,12 +54,12 @@ export const UserTable = ({ entries }: UserTableProps) => {
                 }`}>
                   {user.status}
                 </span>
-              </td>
-              <td className="px-6 py-5">{user.date}</td>
-            </tr>
+              </TableCell>
+              <TableCell className="px-6 py-5 text-gray-300">{user.date}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 };
