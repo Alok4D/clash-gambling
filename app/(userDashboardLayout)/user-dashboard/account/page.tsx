@@ -1,4 +1,5 @@
 
+import AccountActions from "./_components/AccountActions";
 import { ChangePassword, ProfileInfo } from "./_components/SettingsSections";
 
 export default function SettingsPage() {
@@ -16,6 +17,7 @@ export default function SettingsPage() {
         <div className="space-y-8">
           <ProfileInfo />
           <ChangePassword />
+          <AccountActions />
         </div>
 
       </div>

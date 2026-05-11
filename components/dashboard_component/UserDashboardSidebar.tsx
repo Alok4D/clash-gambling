@@ -51,6 +51,7 @@ export function UserDashboardSidebar() {
 
   const menuItems = [
     { title: "Dashboard", icon: LayoutGrid, href: "/user-dashboard" },
+    { title: "Saved", icon: LayoutGrid, href: "/user-dashboard/saved" },
     { title: "Sharp Bot", icon: Bot, href: "/user-dashboard/sharp-bot" },
     { title: "Account", icon: User, href: "/user-dashboard/account" },
   ];
