@@ -12,7 +12,7 @@ export default function DashboardLayout({
       <DashboardSidebar />
       <div className="flex flex-col flex-1 overflow-hidden min-w-0">
         <DashboardHeader />
-        <main className="flex-1 p-8 overflow-y-auto bg-white">{children}</main>
+        <main className="flex-1 p-8 overflow-y-auto bg-[#181818]">{children}</main>
       </div>
     </div>
   );
