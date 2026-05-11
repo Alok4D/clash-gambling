@@ -11,6 +11,7 @@ import {
   LayoutGrid,
   User,
   DollarSign,
+  Bot,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -49,9 +50,9 @@ export function UserDashboardSidebar() {
 
 
   const menuItems = [
-    { title: "Dashboard", icon: LayoutGrid, href: "/dashboard" },
-    { title: "Subscription", icon: DollarSign, href: "/dashboard/subscription" },
-    { title: "Account", icon: User, href: "/dashboard/account" },
+    { title: "Dashboard", icon: LayoutGrid, href: "/user-dashboard" },
+    { title: "Sharp Bot", icon: Bot, href: "/user-dashboard/sharp-bot" },
+    { title: "Account", icon: User, href: "/user-dashboard/account" },
   ];
 
   const sidebarContent = (

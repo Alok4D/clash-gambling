@@ -11,7 +11,7 @@ export default async function OpportunitiesPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = typeof params.page === 'string' ? parseInt(params.page) : 1;
   const currentPage = isNaN(page) ? 1 : page;
-  const totalPages = 5; // Placeholder for now
+  const totalPages = 5;
   return (
     <div className="min-h-screen">
       <div className="max-w-full mx-auto space-y-12">
