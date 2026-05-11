@@ -63,8 +63,8 @@ export function DashboardSidebar() {
             <Image
               src="/dashboard-logo/admin-dashboard-logo.svg"
               alt="Logo"
-              width={32}
-              height={32}
+              width={65}
+              height={65}
               className="object-contain"
             />
           </div>
