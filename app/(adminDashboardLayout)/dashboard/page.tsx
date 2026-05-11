@@ -5,7 +5,7 @@ import { Pagination } from './dashboard-overview/_component/Pagination';
 
 export default function DashboardOverviewPage() {
   return (
-    <div className="min-h-screen p-8 font-sans">
+    <div className="min-h-screen">
       <div className="max-w-7xl mx-auto space-y-8">
         
         {/* Stats Grid */}

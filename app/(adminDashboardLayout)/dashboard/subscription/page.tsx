@@ -2,7 +2,7 @@ import { SubscriptionCard } from "./_components/SubscriptionCard";
 
 export default function SubscriptionPage() {
   return (
-    <div className="min-h-screen bg-[#111111] p-10 font-sans">
+    <div className="min-h-screen p-10 font-sans">
       <div className="max-w-6xl mx-auto">
 
         {/* Header Section */}
