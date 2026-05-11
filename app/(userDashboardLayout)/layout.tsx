@@ -1,5 +1,7 @@
+
 import { UserDashboardHeader } from "@/components/dashboard_component/UserDashboardHeader";
 import { UserDashboardSidebar } from "@/components/dashboard_component/UserDashboardSidebar";
+import type React from "react";
 
 export default function DashboardLayout({
   children,
@@ -7,13 +9,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden w-full max-w-full">
       <UserDashboardSidebar />
-      <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+      <div className="flex flex-col flex-1 overflow-hidden min-w-0">
         <UserDashboardHeader />
-        <main className="flex-1 overflow-y-auto">
-          {children}
-        </main>
+        <main className="flex-1 p-8 overflow-y-auto bg-[#181818]">{children}</main>
       </div>
     </div>
   );

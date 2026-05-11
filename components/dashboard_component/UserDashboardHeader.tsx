@@ -1,42 +1,44 @@
 "use client";
 
-import Image from "next/image";
-import { useGetMeQuery } from "@/lib/features/user/userApi";
-
-
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export function UserDashboardHeader() {
-    const { data: user, isLoading: isUserLoading } = useGetMeQuery();
+  return (
+    <div className="w-full border-b border-[#00FF88]/20 py-4 px-6 z-40 bg-[#181818]">
+      <div className="w-full mx-auto flex justify-between items-center gap-4">
+        <div className="flex-1">
+          {/* <h1 className="text-[20px] sm:text-[20px] font-medium text-white font-montserrat">
+            Welcome to Clash Admin Dashboard
+          </h1> */}
+        </div>
+
+        {/* Right side - User info */}
+        <div className="flex items-center gap-3 sm:gap-4">
 
 
-    return (
-        <header className="w-full flex items-center justify-between px-6 lg:px-8 py-6 bg-[rgba(119,174,225,0.20)]">
-            {/* Title Section */}
-            <div className="ml-12 lg:ml-0">
-                <h1 className="text-lg lg:text-xl font-bold text-slate-900 leading-tight">Plan Your Journey</h1>
-                <p className="text-[10px] lg:text-xs text-slate-400">Departure → Destination</p>
-            </div>
-
-            {/* Profile Section */}
-            <div className="flex items-center gap-2 lg:gap-3 group">
-                <div className="h-9 w-9 lg:h-10 lg:w-10 rounded-full overflow-hidden border border-slate-200 shadow-sm bg-slate-100 flex items-center justify-center">
-                    <Image
-                        src={user?.data?.profilePicture || "https://blog.hootsuite.com/wp-content/uploads/2020/02/Image-copyright.png"}
-                        alt={user?.data?.name || "User Avatar"}
-                        width={40}
-                        height={40}
-                        className="object-cover w-full h-full"
-                    />
-                </div>
-                <div className="flex flex-col gap-1">
-                    <span className="hidden sm:inline text-sm font-medium text-slate-600">
-                        {isUserLoading ? "Loading..." : user?.data?.name || "User"}
-                    </span>
-                    <span className="hidden sm:inline text-[10px] font-medium text-slate-600">
-                        {isUserLoading ? "Loading..." : user?.data?.role || "User"}
-                    </span>
-                </div>
-            </div>
-        </header>
-    );
+          <Avatar className="h-9 w-9 sm:h-10 sm:w-10 ring-2 ring-[#00FF88]/40 ring-offset-2 ring-offset-[#181818] transition-transform hover:scale-105">
+          <Link href={"/dashboard/account"}>
+            <AvatarImage
+              src="/dashboard-logo/Ellipse 6.svg"
+              alt="User"
+              className="object-cover cursor-pointer"
+            />
+          </Link>
+            <AvatarFallback className="bg-linear-to-br from-[#00FF88]/20 to-[#00FF88]/10 text-white font-semibold text-sm sm:text-base">
+              AD
+            </AvatarFallback>
+          </Avatar>
+          <div className="hidden sm:block text-left">
+            <p className="text-[18px] font-normal font-montserrat text-white leading-[32px]">
+              Clash User
+            </p>
+            <p className="text-[13px] font-medium font-montserrat text-gray-200 leading-[16px]">
+              democlash@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
