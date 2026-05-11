@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from 'react';
 import { SubscriptionCard } from "./_components/SubscriptionCard";
+import { InviteUserModal } from "./_components/InviteUserModal";
 
 export default function SubscriptionPage() {
+  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen p-10 font-sans">
       <div className="max-w-6xl mx-auto">
@@ -10,7 +16,10 @@ export default function SubscriptionPage() {
           <h1 className="text-white text-4xl font-bold tracking-tight">
             Subscription plan
           </h1>
-          <button className="px-8 py-3 bg-[#00FF85] hover:bg-[#00E676] text-black font-bold rounded-lg transition-colors">
+          <button 
+            onClick={() => setIsInviteModalOpen(true)}
+            className="px-8 py-3 bg-[#00FF85] hover:bg-[#00E676] text-black font-bold rounded-lg transition-colors"
+          >
             Invite User
           </button>
         </div>
@@ -33,6 +42,11 @@ export default function SubscriptionPage() {
           />
         </div>
 
+        {/* Modals */}
+        <InviteUserModal 
+          isOpen={isInviteModalOpen} 
+          onClose={() => setIsInviteModalOpen(false)} 
+        />
       </div>
     </div>
   );
