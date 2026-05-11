@@ -46,17 +46,14 @@ export default function GameAnalysis() {
 
         {/* Key Stats Section */}
         <Betting />
-
-
-
-
+        
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <OddsTable />
           <RecentGames />
         </div>
 
-                {/* Line Movement Chart */}
+        {/* Line Movement Chart */}
         <LineMovementChart />
 
         {/* AI Summary Section */}
@@ -66,7 +63,11 @@ export default function GameAnalysis() {
               <MessageSquare size={18} /> <h3 className="font-bold">AI Summary</h3>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
-              The Lakers spread has moved from -3.5 to -2.5 over the past week, indicating sharp money on the Warriors...
+             The Lakers spread has moved from -3.5 to -2.5 over the past week, indicating sharp money on the Warriors. Public betting is heavily on the Lakers (68%), creating a contrarian opportunity.
+            </p>
+
+            <p className="text-sm leading-relaxed text-gray-400 mt-3">
+            Historical data shows the Warriors are 7-3 ATS in their last 10 games against Western Conference opponents. The current line represents a +4.2% expected value opportunity based on our models.
             </p>
           </div>
           <div className="bg-[#0D1117] border border-[#1F2937] rounded-xl p-6">
