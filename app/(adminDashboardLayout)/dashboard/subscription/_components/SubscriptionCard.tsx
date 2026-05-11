@@ -1,24 +1,32 @@
-// components/SubscriptionCard.tsx
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import { EditSubscriptionModal } from './EditSubscriptionModal';
 
 interface SubscriptionCardProps {
   title: string;
+  description?: string;
   price: string;
   period: string;
-  description?: string;
   isBestValue?: boolean;
 }
 
 export const SubscriptionCard = ({ 
   title, 
+  description, 
   price, 
   period, 
-  description, 
   isBestValue 
 }: SubscriptionCardProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="relative pt-4">
-      {/* Best Value Badge */}
+    <div className="relative">
+      <EditSubscriptionModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+      
       {isBestValue && (
         <div className="absolute top-0 left-6 z-10">
           <span className="bg-white text-black text-[10px] font-bold px-3 py-1 rounded-sm shadow-lg">
@@ -40,7 +48,10 @@ export const SubscriptionCard = ({
           <span className="text-white text-xl font-bold">/{period}</span>
         </div>
 
-        <button className="w-full py-3 bg-[#00FF85] hover:bg-[#00E676] text-black font-bold rounded-lg transition-colors">
+        <button 
+          onClick={() => setIsModalOpen(true)}
+          className="w-full py-3 bg-[#00FF85] hover:bg-[#00E676] text-black font-bold rounded-lg transition-colors"
+        >
           Edit
         </button>
       </div>
