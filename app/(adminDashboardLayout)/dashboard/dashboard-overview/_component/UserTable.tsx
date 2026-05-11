@@ -1,6 +1,3 @@
-// components/UserTable.tsx
-import React from 'react';
-
 interface UserEntry {
   name: string;
   email: string;
@@ -56,4 +53,4 @@ export const UserTable = ({ entries }: UserTableProps) => {
       </table>
     </div>
   );
-};
+};

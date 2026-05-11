@@ -1,36 +1,47 @@
-// components/Pagination.tsx
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
-  onPageChange: (page: number) => void;
 }
 
-export const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) => {
+export const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
   const getPageNumbers = () => {
     const pages = [];
-    for (let i = 1; i <= Math.min(3, totalPages); i++) {
-      pages.push(i);
+    const maxVisible = 5;
+    
+    if (totalPages <= maxVisible) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      // Logic for more complex pagination can go here
+      // For now, sticking to a simpler version that shows first 3
+      for (let i = 1; i <= Math.min(3, totalPages); i++) pages.push(i);
     }
     return pages;
   };
 
+  const createPageUrl = (pageNumber: number) => {
+    return `/dashboard?page=${pageNumber}`;
+  };
+
   return (
     <div className="flex items-center justify-center gap-2 mt-8">
-      <button 
-        onClick={() => onPageChange(Math.max(1, currentPage - 1))}
-        disabled={currentPage === 1}
-        className="p-2 border border-[#374151] rounded-full text-gray-400 hover:bg-[#1F2937] disabled:opacity-30 disabled:hover:bg-transparent"
+      <Link 
+        href={createPageUrl(Math.max(1, currentPage - 1))}
+        className={cn(
+          "p-2 border border-[#374151] rounded-full text-gray-400 hover:bg-[#1F2937] transition-all",
+          currentPage === 1 && "opacity-30 pointer-events-none"
+        )}
       >
         <ChevronLeft size={20} />
-      </button>
+      </Link>
       
       {getPageNumbers().map((page) => (
-        <button 
+        <Link 
           key={page}
-          onClick={() => onPageChange(page)}
+          href={createPageUrl(page)}
           className={cn(
             "w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-200",
             currentPage === page 
@@ -39,14 +50,14 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
           )}
         >
           {page}
-        </button>
+        </Link>
       ))}
       
-      {totalPages > 3 && (
+      {totalPages > 5 && (
         <>
           <span className="text-gray-600 px-2">...</span>
-          <button 
-            onClick={() => onPageChange(totalPages)}
+          <Link 
+            href={createPageUrl(totalPages)}
             className={cn(
               "w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-200",
               currentPage === totalPages 
@@ -55,17 +66,19 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
             )}
           >
             {totalPages}
-          </button>
+          </Link>
         </>
       )}
       
-      <button 
-        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-        disabled={currentPage === totalPages}
-        className="p-2 border border-[#374151] rounded-full text-gray-400 hover:bg-[#1F2937] disabled:opacity-30 disabled:hover:bg-transparent"
+      <Link 
+        href={createPageUrl(Math.min(totalPages, currentPage + 1))}
+        className={cn(
+          "p-2 border border-[#374151] rounded-full text-gray-400 hover:bg-[#1F2937] transition-all",
+          currentPage === totalPages && "opacity-30 pointer-events-none"
+        )}
       >
         <ChevronRight size={20} />
-      </button>
+      </Link>
     </div>
   );
-};
+};

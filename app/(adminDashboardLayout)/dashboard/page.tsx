@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from 'react';
 import { DollarSign, Users } from 'lucide-react';
 import { StatsCard } from './dashboard-overview/_component/StatsCard';
 import { UserTable } from './dashboard-overview/_component/UserTable';
@@ -34,10 +31,16 @@ const allUsers = [
   { name: "Mark Adams", email: "madams@tech.com", access: "Monthly", status: "Canceled", date: "Jan 30, 2027" },
 ];
 
-export default function DashboardOverviewPage() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+interface PageProps {
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default async function DashboardOverviewPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const page = typeof params.page === 'string' ? parseInt(params.page) : 1;
+  const currentPage = isNaN(page) ? 1 : page;
   
+  const itemsPerPage = 7;
   const totalPages = Math.ceil(allUsers.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentUsers = allUsers.slice(startIndex, startIndex + itemsPerPage);
@@ -70,7 +73,6 @@ export default function DashboardOverviewPage() {
           <Pagination 
             currentPage={currentPage} 
             totalPages={totalPages} 
-            onPageChange={setCurrentPage} 
           />
         </div>
         
