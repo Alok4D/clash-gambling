@@ -14,14 +14,7 @@ export function DashboardHeader() {
 
         {/* Right side - User info */}
         <div className="flex items-center gap-3 sm:gap-4">
-          <div className="hidden sm:block text-right">
-            <p className="text-sm font-semibold text-white leading-tight">
-              User
-            </p>
-            <p className="text-xs font-medium text-gray-400 capitalize">
-              Administrator
-            </p>
-          </div>
+
 
           <Avatar className="h-9 w-9 sm:h-10 sm:w-10 ring-2 ring-[#00FF88]/40 ring-offset-2 ring-offset-[#181818] transition-transform hover:scale-105">
             <AvatarImage
@@ -33,6 +26,14 @@ export function DashboardHeader() {
               AD
             </AvatarFallback>
           </Avatar>
+          <div className="hidden sm:block text-left">
+            <p className="text-sm font-semibold font-montserrat text-white leading-tight">
+              Clash Admin
+            </p>
+            <p className="text-[12px] font-medium font-montserrat text-gray-400 leading-[16px]">
+              democlash@gmail.com
+            </p>
+          </div>
         </div>
       </div>
     </div>
