@@ -1,5 +1,5 @@
 // components/SettingsSections.tsx
-import { User, Lock } from 'lucide-react';
+import { User, Lock, Mail } from 'lucide-react';
 import { InputField } from './InputField';
 
 export const ProfileInfo = () => (
@@ -8,17 +8,20 @@ export const ProfileInfo = () => (
     
     <div className="flex items-center gap-6">
       <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-700">
-        <img src="/avatar.png" alt="Profile" className="w-full h-full object-cover" />
+        <img src="/dashboard-logo/3a0e755d9cdd0c4a7cfd70e129a33021024dedf6 (1).jpg" alt="admin profile image" className="w-full h-full object-cover" />
       </div>
-      <button className="bg-[#00FF85] hover:bg-[#00E676] text-black font-bold py-2.5 px-6 rounded-lg text-sm transition-colors">
+      <button className="bg-[#00FF85] hover:bg-[#00E676] text-black font-medium py-2.5 px-6 rounded-lg text-sm transition-colors">
         Change your photo
       </button>
     </div>
 
-    <InputField label="Full name" placeholder="Clash" Icon={User} />
-    
+    <div className='flex gap-6 justify-center items-center'>
+      <InputField label="Full name" placeholder="Clash" Icon={User} />
+      <InputField label="Email" placeholder="[EMAIL_ADDRESS]" Icon={Mail} />
+    </div>
+
     <div className="flex justify-end">
-      <button className="bg-[#00FF85] hover:bg-[#00E676] text-black font-bold py-2.5 px-10 rounded-lg transition-colors">
+      <button className="bg-[#00FF85] hover:bg-[#00E676] text-black font-medium py-2.5 px-10 rounded-lg transition-colors">
         Save
       </button>
     </div>
@@ -34,7 +37,7 @@ export const ChangePassword = () => (
     <InputField label="Confirm password" placeholder="********" type="password" Icon={Lock} showPasswordToggle />
 
     <div className="flex justify-end pt-4">
-      <button className="bg-[#00FF85] hover:bg-[#00E676] text-black font-bold py-3 px-8 rounded-lg transition-colors">
+      <button className="bg-[#00FF85] hover:bg-[#00E676] text-black font-medium py-3 px-8 rounded-lg transition-colors">
         Update password
       </button>
     </div>
