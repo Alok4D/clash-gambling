@@ -1,5 +1,6 @@
 // components/MarketTable.tsx
 import { Bookmark, Eye, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 
 const tableData = [
   { game: "Warriors @ Lakers", league: "NBA", confidence: 89, odds: "-4.5 (-110)", score: 89, ev: "+9.2%", signal: "Sharp Money", movement: "+1.5", type: 'green' },
@@ -56,7 +57,9 @@ export const MarketTable = () => (
             <td className="px-4 py-5">
               <div className="flex justify-center gap-3 text-gray-500">
                 <Bookmark size={18} className="cursor-pointer hover:text-white" />
+                <Link href="/user-dashboard/dashboard-overview/game-analysis">
                 <Eye size={18} className="cursor-pointer hover:text-white" />
+                </Link>
               </div>
             </td>
           </tr>
