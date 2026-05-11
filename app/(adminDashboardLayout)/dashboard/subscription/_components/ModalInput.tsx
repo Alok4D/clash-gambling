@@ -17,9 +17,11 @@ export const ModalInput = ({ label, value, placeholder, type = 'text' }: ModalIn
         {type === 'select' ? (
           <>
             <select className="w-full bg-[#1C1C1C] border border-gray-800 rounded-lg py-3 px-4 text-gray-300 appearance-none focus:outline-none focus:border-gray-600 cursor-pointer">
-              <option>{placeholder}</option>
-              <option>30 days</option>
-              <option>365 days</option>
+              <option value="">{placeholder}</option>
+              <option value="7">7 days</option>
+              <option value="30">30 days</option>
+              <option value="90">90 days</option>
+              <option value="unlimited">Unlimited</option>
             </select>
             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={18} />
           </>
