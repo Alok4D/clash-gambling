@@ -16,8 +16,8 @@ import { Button } from "@/components/ui/button";
 export default function page() {
   return (
     <>
-
-      <div className="w-full h-screen bg-background flex flex-col gap-6 justify-center items-center">
+    
+      <div style={{backgroundImage: "url('/Landing page.svg')"}} className="w-full h-screen bg-background bg-cover bg-center bg-no-repeat flex flex-col gap-6 justify-center items-center">
        <Link href="/user-dashboard">
        <Button
         
