@@ -1,6 +1,13 @@
-// components/MarketTable.tsx
 import { Bookmark, Eye, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 interface MarketRow {
   game: string;
@@ -16,61 +23,63 @@ interface MarketRow {
 
 export const MarketTable = ({ data }: { data: MarketRow[] }) => (
   <div className="bg-[#0D1117] border border-[#064E3B]/30 rounded-xl overflow-hidden mt-8">
-    <table className="w-full text-left">
-      <thead className="text-gray-500 text-sm border-b border-[#1F2937]">
-        <tr>
-          <th className="px-6 py-6 font-medium text-center">Game</th>
-          <th className="px-4 py-6 font-medium text-center">Confidence</th>
-          <th className="px-4 py-6 font-medium text-center">Odds</th>
-          <th className="px-4 py-6 font-medium text-center text-xs">SharpMatrix Score</th>
-          <th className="px-4 py-6 font-medium text-center">EV %</th>
-          <th className="px-4 py-6 font-medium text-center">Market Signal</th>
-          <th className="px-4 py-6 font-medium text-center">Line Movement</th>
-          <th className="px-4 py-6 font-medium text-center">Action</th>
-        </tr>
-      </thead>
-      <tbody className="text-gray-300">
+    <Table className="w-full text-left">
+      <TableHeader className="bg-transparent border-none">
+        <TableRow className="border-b border-[#1F2937] hover:bg-transparent">
+          <TableHead className="px-6 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">Game</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">Confidence</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">Odds</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-xs h-auto border-none uppercase tracking-tighter">SharpMatrix Score</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">EV %</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">Market Signal</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">Line Movement</TableHead>
+          <TableHead className="px-4 py-6 font-medium text-center text-gray-500 text-sm h-auto border-none">Action</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody className="text-gray-300">
         {data.map((row, i) => (
-          <tr key={i} className="border-b border-[#1F2937]/50 hover:bg-[#161B22]">
-            <td className="px-6 py-5 text-sm">
+          <TableRow key={i} className="border-b border-[#1F2937]/50 last:border-0 hover:bg-[#161B22] transition-colors">
+            <TableCell className="px-6 py-5 text-sm h-auto border-none">
               {row.game} <span className="text-gray-600 text-[10px]">({row.league})</span>
-            </td>
-            <td className="px-4 py-5 text-center">
+            </TableCell>
+            <TableCell className="px-4 py-5 text-center h-auto border-none">
               <span className={`px-2 py-1 rounded text-xs ${row.confidence > 50 ? 'bg-[#064E3B] text-[#22C55E]' : 'bg-[#450A0A] text-[#EF4444]'}`}>
                 {row.confidence}
               </span>
-            </td>
-            <td className="px-4 py-5 text-center text-sm">{row.odds}</td>
-            <td className="px-4 py-5 text-center">
+            </TableCell>
+            <TableCell className="px-4 py-5 text-center text-sm h-auto border-none">{row.odds}</TableCell>
+            <TableCell className="px-4 py-5 text-center h-auto border-none">
               <span className="px-2 py-1 rounded bg-[#064E3B] text-[#22C55E] text-xs">{row.score}</span>
-            </td>
-            <td className={`px-4 py-5 text-center font-bold ${row.type === 'red' ? 'text-red-500' : 'text-green-500'}`}>
+            </TableCell>
+            <TableCell className={`px-4 py-5 text-center font-bold h-auto border-none ${row.type === 'red' ? 'text-red-500' : 'text-green-500'}`}>
               ● {row.ev}
-            </td>
-            <td className="px-4 py-5">
+            </TableCell>
+            <TableCell className="px-4 py-5 h-auto border-none">
                <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-[10px] w-fit mx-auto ${
                  row.type === 'green' ? 'bg-[#064E3B] text-[#22C55E]' : row.type === 'blue' ? 'bg-[#1E3A8A] text-[#3B82F6]' : 'bg-[#450A0A] text-[#EF4444]'
                }`}>
                  <div className={`w-1.5 h-1.5 rounded-full ${row.type === 'green' ? 'bg-[#22C55E]' : row.type === 'blue' ? 'bg-[#3B82F6]' : 'bg-[#EF4444]'}`} />
                  {row.signal}
                </div>
-            </td>
-            <td className="px-4 py-5 text-center">
+            </TableCell>
+            <TableCell className="px-4 py-5 text-center h-auto border-none">
               <div className="flex items-center justify-center gap-1 bg-[#064E3B] text-[#22C55E] px-2 py-1 rounded text-xs">
                 <TrendingUp size={12} /> {row.movement}
               </div>
-            </td>
-            <td className="px-4 py-5">
+            </TableCell>
+            <TableCell className="px-4 py-5 h-auto border-none">
               <div className="flex justify-center gap-3 text-gray-500">
                 <Bookmark size={18} className="cursor-pointer hover:text-white" />
                 <Link href="/user-dashboard/dashboard-overview/game-analysis">
-                <Eye size={18} className="cursor-pointer hover:text-white" />
+                  <Eye size={18} className="cursor-pointer hover:text-white" />
                 </Link>
               </div>
-            </td>
-          </tr>
+            </TableCell>
+          </TableRow>
         ))}
-      </tbody>
-    </table>
+      </TableBody>
+    </Table>
   </div>
 );
+
+export default MarketTable;

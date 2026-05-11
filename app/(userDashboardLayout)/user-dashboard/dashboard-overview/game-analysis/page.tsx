@@ -16,19 +16,21 @@ export default function GameAnalysis() {
       <div className="w-full mx-auto space-y-6">
         
         {/* Header Section */}
-        <div className="flex justify-between items-start">
-          <div className="space-y-2">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+          <div className="space-y-2 w-full md:w-auto">
             <button onClick={() => router.back()} className="text-gray-500 hover:text-white mb-2"><ChevronLeft size={20} /></button>
             <div className="flex items-center gap-2">
               <span className="bg-[#064E3B] text-[#22C55E] text-[10px] font-bold px-2 py-0.5 rounded">NBA</span>
               <span className="text-xs text-gray-500">Basketball • Today, 7:30 PM ET</span>
             </div>
-            <h1 className="text-white text-3xl font-bold">LA Lakers <span className="text-[#22C55E]">vs</span> Golden State Warriors</h1>
+            <h1 className="text-white text-2xl md:text-3xl font-bold leading-tight">
+              LA Lakers <span className="text-[#22C55E]">vs</span> Golden State Warriors
+            </h1>
             <p className="text-xs text-gray-500">Chase Center, San Francisco</p>
           </div>
-          <div className="flex gap-3">
-            <button className="bg-[#00FF85] text-black font-bold px-6 py-2.5 rounded-lg text-sm">Ask SharpBot</button>
-            <button className="bg-[#161B22] border border-gray-800 text-white font-bold px-6 py-2.5 rounded-lg text-sm">Save Game</button>
+          <div className="flex flex-wrap gap-3 w-full md:w-auto">
+            <button className="flex-1 md:flex-none bg-[#00FF85] text-black font-bold px-6 py-2.5 rounded-lg text-sm transition-all hover:bg-[#00E678]">Ask SharpBot</button>
+            <button className="flex-1 md:flex-none bg-[#161B22] border border-gray-800 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-all hover:bg-[#1c222b]">Save Game</button>
           </div>
         </div>
 
