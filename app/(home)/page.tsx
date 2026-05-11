@@ -18,9 +18,11 @@ export default function page() {
     <>
 
       <div className="w-full h-screen bg-background flex flex-col gap-6 justify-center items-center">
-        <Button
+       <Link href="/user-dashboard">
+       <Button
         
           className="text-2xl font-medium text-foreground">User Dashboard</Button>
+       </Link>
         <Link href="/dashboard">
           <Button className="text-2xl font-medium text-foreground">Admin Dashboard</Button>
         </Link>
