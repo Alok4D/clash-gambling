@@ -3,7 +3,7 @@ import { UserDashboardHeader } from "@/components/dashboard_component/UserDashbo
 import { UserDashboardSidebar } from "@/components/dashboard_component/UserDashboardSidebar";
 import type React from "react";
 
-export default function DashboardLayout({
+export default function UserDashboardLayout({
   children,
 }: {
   children: React.ReactNode;
