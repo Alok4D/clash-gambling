@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${manrope.className} antialiased`}
+        className={`${manrope.variable} ${montserrat.variable} ${manrope.className} antialiased`}
         style={{ "--font-title": "var(--font-sans)" } as React.CSSProperties}
       >
         <div className="min-h-screen flex flex-col">

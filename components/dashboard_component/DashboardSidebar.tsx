@@ -69,7 +69,7 @@ export function DashboardSidebar() {
             />
           </div>
           {!collapsed && (
-            <span className="text-white font-bold text-xl whitespace-nowrap">
+            <span className="text-white font-medium text-[18px] leading-[24px] tracking-[-0.5px] font-montserrat whitespace-nowrap">
               Sharp Matrix AI
             </span>
           )}
