@@ -29,7 +29,7 @@ export function DashboardHeader() {
               alt="User"
               className="object-cover"
             />
-            <AvatarFallback className="bg-gradient-to-br from-[#00FF88]/20 to-[#00FF88]/10 text-white font-semibold text-sm sm:text-base">
+            <AvatarFallback className="bg-linear-to-br from-[#00FF88]/20 to-[#00FF88]/10 text-white font-semibold text-sm sm:text-base">
               AD
             </AvatarFallback>
           </Avatar>

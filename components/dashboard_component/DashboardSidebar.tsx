@@ -114,17 +114,19 @@ export function DashboardSidebar() {
 
       {/* Logout Button */}
       <div className="p-6 mt-auto">
+      <Link href={"/"}>
         <button
           onClick={handleLogout}
           className={cn(
-            "flex items-center justify-center gap-3 w-full py-4 rounded-2xl transition-all duration-300 bg-gradient-to-r from-[#8B1A1A] to-[#631212] hover:from-[#A52A2A] hover:to-[#8B1A1A] text-white shadow-[0_10px_20px_-5px_rgba(139,26,26,0.4)] group relative overflow-hidden",
-            collapsed && "px-0 h-12 w-12 rounded-xl"
+            "flex items-center justify-center gap-3 w-full py-3.5 rounded-md transition-all duration-300 bg-linear-to-r from-[#8B1A1A] to-[#631212] hover:from-[#A52A2A] hover:to-[#8B1A1A] text-white shadow-[0_10px_20px_-5px_rgba(139,26,26,0.4)] group relative overflow-hidden",
+            collapsed && "px-0 h-12 w-12 rounded-full"
           )}
           title={collapsed ? "Logout" : undefined}
         >
-          <LogOut className="h-6 w-6 transition-transform group-hover:scale-110" />
-          {!collapsed && <span className="font-bold text-base">Logout</span>}
+          <LogOut className="h-5 w-5 transition-transform group-hover:scale-110" />
+          {!collapsed && <span className="font-medium text-base">Logout</span>}
         </button>
+      </Link>
       </div>
     </div>
   );
@@ -158,7 +160,7 @@ export function DashboardSidebar() {
         variant="ghost"
         size="icon"
         className={cn(
-          "fixed top-10 h-6 w-6 rounded-full border border-white/10 bg-[#181818] shadow-md z-[100] hover:bg-white/5 hidden lg:flex transition-all duration-300 text-[#B7B7B7] hover:text-white",
+          "fixed top-10 h-6 w-6 rounded-full border border-white/10 bg-[#181818] shadow-md z-100 hover:bg-white/5 hidden lg:flex transition-all duration-300 text-[#B7B7B7] hover:text-white",
           collapsed ? "left-[68px]" : "left-[268px]"
         )}
       >
