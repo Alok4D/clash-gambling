@@ -1,7 +1,5 @@
 "use client";
 
-
-
 const FeaturesSection = () => {
   const features = [
     {
@@ -46,7 +44,7 @@ const FeaturesSection = () => {
 
   return (
     <section className="bg-[#0B0E11] py-20 px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1200px]">
         {/* Header Section */}
         <div className="relative mb-16 text-center">
           <h2 className="absolute inset-0 flex items-center justify-center font-inter text-[40px] font-bold text-[#FFFFFF14] md:text-[100px] whitespace-nowrap">
@@ -62,20 +60,22 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group rounded-2xl border border-white/5 bg-[#14181D] p-8 transition-all hover:border-[#00FFA3]/30"
+              className="group flex w-full max-w-[384px] flex-col items-start gap-[48px] rounded-[12px] border border-[#1F2630] bg-[#121821] px-6 py-5 transition-all hover:border-[#00FFA3]/30"
             >
               {/* Icon Container */}
-              <div className="mb-8 flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-[28px] bg-[#00FF880A] px-3 aspect-square">
+              <div className="flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-[28px] bg-[#00FF880A] px-3 aspect-square">
                 {feature.icon}
               </div>
 
-              {/* Content */}
-              <h4 className="font-montserrat mb-4 text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#FFFFFF]">
-                {feature.title}
-              </h4>
-              <p className="font-montserrat self-stretch text-[16px] md:text-[20px] font-normal leading-[32px] text-[#B7B7B7]">
-                {feature.description}
-              </p>
+              {/* Content Block */}
+              <div className="flex flex-col gap-4">
+                <h4 className="font-montserrat text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#FFFFFF]">
+                  {feature.title}
+                </h4>
+                <p className="font-montserrat self-stretch text-[16px] md:text-[20px] font-normal leading-[32px] text-[#B7B7B7]">
+                  {feature.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
