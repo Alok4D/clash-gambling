@@ -37,7 +37,7 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-[32px] border border-white/5 bg-[#14181D] p-10 transition-all hover:border-[#00FFA3]/20 ${
+              className={`relative flex h-[319px] w-full max-w-[259px] flex-col items-start gap-[48px] rounded-[12px] border border-[#1F2630] bg-[#121821] px-5 py-6 transition-all hover:border-[#00FFA3]/20 ${
                 plan.highlight ? "ring-1 ring-[#00FFA3]/10" : ""
               }`}
             >
@@ -48,32 +48,32 @@ const PricingSection = () => {
                 </div>
               )}
 
-              <div className="flex h-full flex-col items-center text-center">
-                <h4 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+              <div className="flex flex-col items-start gap-2">
+                <h4 className="text-2xl font-bold text-white">
                   {plan.name}
                 </h4>
                 
-                <div className="mb-8 min-h-[40px]">
+                <div className="min-h-[24px]">
                   {plan.features ? (
-                    <p className="text-gray-400">{plan.features}</p>
+                    <p className="text-sm text-gray-400">{plan.features}</p>
                   ) : (
-                    <div className="h-6" /> // Spacer for alignment
+                    <div className="h-4" />
                   )}
                 </div>
 
-                <div className="mb-12">
-                  <span className="text-4xl font-bold text-white md:text-5xl">
+                <div className="mt-4">
+                  <span className="text-3xl font-bold text-white">
                     {plan.price}
                   </span>
-                  <span className="text-2xl font-bold text-white opacity-80 md:text-3xl">
+                  <span className="text-lg font-bold text-white opacity-80">
                     {plan.period}
                   </span>
                 </div>
-
-                <button className="w-full rounded-2xl bg-[#00FFA3] py-4 text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]">
-                  Subscribe
-                </button>
               </div>
+
+              <button className="w-full rounded-2xl bg-[#00FFA3] py-3 text-base font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]">
+                Subscribe
+              </button>
             </div>
           ))}
         </div>
