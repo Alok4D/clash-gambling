@@ -76,7 +76,15 @@ const SignupPage = () => {
                         {/* Feature Cards */}
                         <div className="mt-12 space-y-4">
                             <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
-                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                                <div 
+                                    className="mt-2 shrink-0" 
+                                    style={{ 
+                                        width: '8px', 
+                                        height: '8px', 
+                                        borderRadius: '33554400px', 
+                                        background: 'var(--primary-primary-100, #0F8)' 
+                                    }} 
+                                />
                                 <div>
                                     <h4 
                                         style={{ 
@@ -103,7 +111,15 @@ const SignupPage = () => {
                                 </div>
                             </div>
                             <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
-                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                                <div 
+                                    className="mt-2 shrink-0" 
+                                    style={{ 
+                                        width: '8px', 
+                                        height: '8px', 
+                                        borderRadius: '33554400px', 
+                                        background: 'var(--primary-primary-100, #0F8)' 
+                                    }} 
+                                />
                                 <div>
                                     <h4 
                                         style={{ 
@@ -130,7 +146,15 @@ const SignupPage = () => {
                                 </div>
                             </div>
                             <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
-                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                                <div 
+                                    className="mt-2 shrink-0" 
+                                    style={{ 
+                                        width: '8px', 
+                                        height: '8px', 
+                                        borderRadius: '33554400px', 
+                                        background: 'var(--primary-primary-100, #0F8)' 
+                                    }} 
+                                />
                                 <div>
                                     <h4 
                                         style={{ 
