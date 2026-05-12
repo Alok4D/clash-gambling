@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import ForgotPasswordForm from "./_components/ForgotPasswordForm";
 
 const ForgotPassword = () => {
