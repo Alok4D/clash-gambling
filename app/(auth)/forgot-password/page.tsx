@@ -14,30 +14,44 @@ const ForgotPassword = () => {
       }}
       className="flex min-h-screen items-center justify-center p-4 selection:bg-[#00FFA3]/30"
     >
-      <div className="w-full max-w-md rounded-[32px] border border-[#00FFA3]/10 bg-[#111418] p-8 shadow-[0_0_50px_rgba(0,255,163,0.05)] md:p-10">
-        
-        {/* Back Button */}
-        <Link 
-          href="/login" 
-          style={{ 
-            fontFamily: 'Montserrat, sans-serif',
-            fontSize: '16px',
-            fontWeight: 500,
-            lineHeight: '24px',
-            color: '#FFF'
-          }}
-          className="group mb-8 inline-flex items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] border border-white transition-all hover:bg-white/10 w-fit"
-        >
-          <ArrowLeft size={18} />
-          Back
-        </Link>
+      <div 
+        style={{
+            display: 'inline-flex',
+            padding: '32px',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 'var(--space-space-32, 32px)',
+            borderRadius: 'var(--radius-radius-16, 16px)',
+            border: '1px solid var(--primary-primary-20, rgba(0, 255, 136, 0.20))',
+            boxShadow: '0 2px 8px 0 var(--primary-primary-20, rgba(0, 255, 136, 0.20))',
+            backgroundColor: '#111418'
+        }}
+        className="w-full max-w-[550px]"
+      >
+      
 
-        {/* Content */}
-        <div className="space-y-4">
-          <h1 className="text-3xl font-bold text-white md:text-4xl">
+        <div className="space-y-4 text-center">
+          <h1 
+            style={{
+                color: 'var(--text-stroke-card-color-text-strong, #F2F2F2)',
+                fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                fontSize: 'var(--typography-scale-h3, 40px)',
+                fontWeight: 700,
+                lineHeight: '48px'
+            }}
+          >
             Forgot your password?
           </h1>
-          <p className="text-base leading-relaxed text-gray-400">
+          <p 
+            style={{
+                alignSelf: 'stretch',
+                color: 'var(--text-stroke-card-color-text-weak, #B7B7B7)',
+                fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                fontSize: '16px',
+                fontWeight: 500,
+                lineHeight: '24px'
+            }}
+          >
             Enter your email address, and we'll send you a one-time password (OTP) to reset your password.
           </p>
         </div>
@@ -74,4 +88,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ForgotPassword;

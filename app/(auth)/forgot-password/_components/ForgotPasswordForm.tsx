@@ -1,27 +1,31 @@
 "use client";
 
-import React from "react";
 import { Mail } from "lucide-react";
 
 const ForgotPasswordForm = () => {
     return (
-        <form className="mt-10 space-y-8">
-            <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">
-                    Email address
-                </label>
-                <div className="relative">
-                    <Mail
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
-                        size={18}
-                    />
-                    <input
-                        type="email"
-                        placeholder="you@example.com"
-                        className="w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-12 pr-4 text-white placeholder-gray-600 outline-none transition-all focus:border-[#00FFA3]/40 focus:bg-white/[0.07]"
-                    />
-                </div>
-            </div>
+        <form className="mt-10 space-y-8 w-full">
+               <div className="space-y-2">
+                               <label
+                                   style={{
+                                       fontFamily: 'Montserrat, sans-serif',
+                                       fontSize: '14px',
+                                       fontWeight: 400,
+                                       lineHeight: '24px',
+                                       color: '#B7B7B7'
+                                   }}
+                               >
+                                   Email address
+                               </label>
+                               <div className="relative">
+                                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                                   <input
+                                       type="email"
+                                       placeholder="you@example.com"
+                                       className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                                   />
+                               </div>
+                           </div>
 
             <button
                 type="submit"
