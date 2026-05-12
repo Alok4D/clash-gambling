@@ -53,7 +53,7 @@ const FeaturesSection = () => {
               <h4 className="font-montserrat mb-4 text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#FFFFFF]">
                 {feature.title}
               </h4>
-              <p className="leading-relaxed text-gray-400">
+              <p className="font-montserrat self-stretch text-[16px] md:text-[20px] font-normal leading-[32px] text-[#B7B7B7]">
                 {feature.description}
               </p>
             </div>
