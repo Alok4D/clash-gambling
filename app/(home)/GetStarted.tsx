@@ -43,7 +43,7 @@ const GetStarted = () => {
           Join the waitlist for early access to SharpMatrix AI and start making data-driven decisions.
         </p>
 
-        <button className="rounded-xl bg-[#00FFA3] px-10 py-4 text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.4)] active:scale-95">
+        <button className="flex items-center justify-center gap-[10px] rounded-[10px] bg-[#00FF88] px-6 py-[14px] text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.4)] active:scale-95">
           Get Early Access
         </button>
       </div>
