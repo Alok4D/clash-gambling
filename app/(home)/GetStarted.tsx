@@ -39,7 +39,7 @@ const GetStarted = () => {
           Ready to Get Started?
         </h2>
         
-        <p className="mx-auto max-w-2xl text-base text-gray-400 md:text-lg">
+        <p className="font-montserrat mx-auto max-w-2xl text-[16px] font-medium leading-[24px] text-[#B7B7B7] text-center">
           Join the waitlist for early access to SharpMatrix AI and start making data-driven decisions.
         </p>
 
