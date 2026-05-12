@@ -22,7 +22,7 @@ export default function Intro() {
             Get Early Access
           </button>
           
-          <button className="flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-10 py-4 text-lg font-bold text-white backdrop-blur-xl transition-all hover:bg-white/10 active:scale-95 min-w-[220px]">
+          <button className="flex items-center justify-center gap-[10px] rounded-[10px] border border-white bg-transparent px-6 py-[14px] text-lg font-bold text-white transition-all hover:bg-white/10 active:scale-95">
             View Dashboard
           </button>
         </div>
