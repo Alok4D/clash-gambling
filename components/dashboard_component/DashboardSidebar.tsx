@@ -144,7 +144,7 @@ export function DashboardSidebar() {
       {/* Sidebar Container */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-[60] flex flex-col bg-[#181818] shadow-2xl lg:shadow-none transition-all duration-300 lg:relative lg:translate-x-0 h-screen overflow-hidden border-r border-[#00FF88]/20",
+          "fixed inset-y-0 left-0 z-60 flex flex-col bg-[#181818] shadow-2xl lg:shadow-none transition-all duration-300 lg:relative lg:translate-x-0 h-screen overflow-hidden border-r border-[#00FF88]/20",
           collapsed ? "w-20" : "w-70",
           mobileMenuOpen
             ? "translate-x-0"
