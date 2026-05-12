@@ -49,7 +49,7 @@ const PricingSection = () => {
               )}
 
               <div className="flex flex-col items-start gap-2">
-                <h4 className="text-2xl font-bold text-white">
+                <h4 className="font-montserrat text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#FFFFFF]">
                   {plan.name}
                 </h4>
                 
