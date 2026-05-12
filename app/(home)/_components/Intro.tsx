@@ -18,7 +18,7 @@ export default function Intro() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col items-center justify-center gap-6 sm:flex-row mb-24">
-          <button className="group flex items-center justify-center rounded-lg bg-[#00FFA3] px-10 py-4 text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_25px_rgba(0,255,163,0.5)] active:scale-95 min-w-[220px]">
+          <button className="group flex items-center justify-center gap-[10px] rounded-[10px] bg-[#00FF88] px-6 py-[14px] text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_25px_rgba(0,255,163,0.5)] active:scale-95">
             Get Early Access
           </button>
           
