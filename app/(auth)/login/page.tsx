@@ -15,7 +15,7 @@ const LoginPage = () => {
             }}
             className="min-h-screen w-full text-white selection:bg-[#00FFA3]/30"
         >
-            <div className="mx-auto flex min-h-screen max-w-[1200px] flex-col px-6 py-8 lg:px-20">
+            <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 py-8 lg:px-20">
 
                 {/* Back to Home Button */}
                 <Link
@@ -36,11 +36,14 @@ const LoginPage = () => {
                 <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center">
 
                     {/* Left Column: Branding & Features */}
-                    <div className="flex flex-col lg:w-1/2">
+                    <div className="flex flex-col w-full">
                         <div className="mb-8 max-w-[400px]">
                             {/* Logo Placeholder */}
                             <div className="flex justify-center items-center">
-                                <Image src="/login-logo.svg" alt="Logo" width={100} height={100} className="w-full h-auto" />
+                                <Image src="/login-logo.svg" alt="Logo"
+                                draggable={false}
+                                priority={true}
+                                width={100} height={100} className="w-full h-auto" />
                             </div>
                         </div>
 
@@ -75,45 +78,118 @@ const LoginPage = () => {
                             <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
                                 <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
                                 <div>
-                                    <h4 className="font-bold text-white">Real-time Market Data</h4>
-                                    <p className="text-sm text-gray-400">Live odds and line movements</p>
+                                    <h4 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '20px',
+                                            fontWeight: 400,
+                                            lineHeight: '32px',
+                                            color: '#F2F2F2'
+                                        }}
+                                    >
+                                        Real-time Market Data
+                                    </h4>
+                                    <p 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '14px',
+                                            fontWeight: 500,
+                                            lineHeight: '24px',
+                                            color: '#B7B7B7'
+                                        }}
+                                    >
+                                        Live odds and line movements
+                                    </p>
                                 </div>
                             </div>
                             <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
                                 <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
                                 <div>
-                                    <h4 className="font-bold text-white">AI-Powered Insights</h4>
-                                    <p className="text-sm text-gray-400">SharpBot analysis on demand</p>
+                                    <h4 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '20px',
+                                            fontWeight: 400,
+                                            lineHeight: '32px',
+                                            color: '#F2F2F2'
+                                        }}
+                                    >
+                                        AI-Powered Insights
+                                    </h4>
+                                    <p 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '14px',
+                                            fontWeight: 500,
+                                            lineHeight: '24px',
+                                            color: '#B7B7B7'
+                                        }}
+                                    >
+                                        SharpBot analysis on demand
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Right Column: Login Form */}
-                    <div className="flex flex-col lg:w-[450px]">
-                        <h2 className="mb-8 text-3xl font-bold">Log in to your account</h2>
+                    <div className="flex flex-col w-full">
+                        <h2 
+                            style={{ 
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '40px',
+                                fontWeight: 700,
+                                lineHeight: '48px',
+                                color: '#FFF',
+                                textAlign: 'center',
+                                alignSelf: 'stretch'
+                            }}
+                            className="mb-10"
+                        >
+                            Log in to your account
+                        </h2>
 
                         <form className="space-y-6">
                             <div className="space-y-2">
-                                <label className="text-sm text-gray-400">Email address</label>
+                                <label 
+                                    style={{ 
+                                        fontFamily: 'Montserrat, sans-serif',
+                                        fontSize: '14px',
+                                        fontWeight: 400,
+                                        lineHeight: '24px',
+                                        color: '#B7B7B7'
+                                    }}
+                                >
+                                    Email address
+                                </label>
                                 <div className="relative">
                                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                                     <input
                                         type="email"
                                         placeholder="you@example.com"
-                                        className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-12 pr-4 outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                                        className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm text-gray-400">Password</label>
+                                <label 
+                                    style={{ 
+                                        fontFamily: 'Montserrat, sans-serif',
+                                        fontSize: '14px',
+                                        fontWeight: 400,
+                                        lineHeight: '24px',
+                                        color: '#B7B7B7'
+                                    }}
+                                >
+                                    Password
+                                </label>
                                 <div className="relative">
                                     <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                                     <input
                                         type="password"
                                         placeholder="**********"
-                                        className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-12 pr-12 outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                                        className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
                                     />
                                     <EyeOff className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500" size={18} />
                                 </div>
@@ -124,7 +200,17 @@ const LoginPage = () => {
                                     <input type="checkbox" className="accent-[#00FFA3] h-4 w-4 rounded" />
                                     I agree to the Terms of Service and Privacy Policy
                                 </label>
-                                <Link href="/forgot-password" className="text-sm font-medium text-[#00FFA3] hover:underline">
+                                <Link 
+                                    href="/forgot-password" 
+                                    style={{ 
+                                        fontFamily: 'Montserrat, sans-serif',
+                                        fontSize: '14px',
+                                        fontWeight: 500,
+                                        lineHeight: '24px',
+                                        color: '#00FF88'
+                                    }}
+                                    className="hover:underline"
+                                >
                                     Forgot password?
                                 </Link>
                             </div>

@@ -47,7 +47,9 @@ const SignupPage = () => {
             <div className="mb-8 max-w-[400px]">
                         {/* Logo Placeholder */}
                         <div className="flex justify-center items-center">
-                    <Image src="/login-logo.svg" alt="Logo" width={100} height={100} className="w-[131px] h-[96px]" />
+                    <Image src="/login-logo.svg" alt="Logo"
+                    draggable={false}
+                    width={100} height={100} className="w-[131px] h-[96px]" />
                         </div>
                       </div>
 
@@ -83,8 +85,28 @@ const SignupPage = () => {
                 <div key={i} className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
                   <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
                   <div>
-                    <h4 className="font-bold text-gray-100">{f.title}</h4>
-                    <p className="text-sm text-gray-400">{f.desc}</p>
+                    <h4 
+                      style={{ 
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '20px',
+                        fontWeight: 400,
+                        lineHeight: '32px',
+                        color: '#F2F2F2'
+                      }}
+                    >
+                      {f.title}
+                    </h4>
+                    <p 
+                      style={{ 
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        lineHeight: '24px',
+                        color: '#B7B7B7'
+                      }}
+                    >
+                      {f.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -93,7 +115,18 @@ const SignupPage = () => {
 
           {/* Right Column: Signup Form */}
           <div className="flex flex-col lg:w-[480px]">
-            <h2 className="mb-8 text-center text-3xl font-bold lg:text-left lg:text-4xl">
+            <h2 
+              style={{ 
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '40px',
+                fontWeight: 700,
+                lineHeight: '48px',
+                color: '#FFF',
+                textAlign: 'center',
+                alignSelf: 'stretch'
+              }}
+              className="mb-10"
+            >
               Create your account
             </h2>
             
