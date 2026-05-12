@@ -32,8 +32,8 @@ const FeaturesSection = () => {
           <h2 className="absolute inset-0 flex items-center justify-center font-inter text-[40px] font-bold text-[#FFFFFF14] md:text-[100px] whitespace-nowrap">
             Data-First Intelligence
           </h2>
-          <h3 className="relative pt-6 text-3xl font-bold text-white md:pt-10 md:text-4xl">
-            How it work
+          <h3 className="font-montserrat relative pt-6 text-3xl font-bold text-[#F2F2F2] md:pt-10 md:text-[40px] leading-[48px]">
+            How it works
           </h3>
         </div>
 
@@ -50,7 +50,7 @@ const FeaturesSection = () => {
               </div>
 
               {/* Content */}
-              <h4 className="mb-4 text-2xl font-bold text-white">
+              <h4 className="font-montserrat mb-4 text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#FFFFFF]">
                 {feature.title}
               </h4>
               <p className="leading-relaxed text-gray-400">
