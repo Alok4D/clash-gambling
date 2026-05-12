@@ -30,7 +30,12 @@ const GetStarted = () => {
       </div>
 
       {/* Main CTA Card */}
-      <div className="relative z-10 flex w-full max-w-[840px] flex-col items-center justify-center gap-6 rounded-[28px] border border-[#12121200] bg-[#1B1B1B] px-6 py-7 shadow-[0_0_8px_0_rgba(0,255,163,0.20)]">
+      <div className="relative z-10 flex w-full max-w-[840px] flex-col items-center justify-center gap-6 rounded-[28px] border border-[#12121200] bg-[#1B1B1B] px-6 py-7 shadow-[0_0_8px_0_rgba(0,255,163,0.20)] overflow-hidden">
+        {/* Top Gradient Border */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#00FF88]/60 to-transparent" />
+        
+        {/* Bottom Gradient Border */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#00FF88]/60 to-transparent" />
 
         <h2 className="font-montserrat text-[28px] md:text-[40px] font-bold leading-[48px] text-[#F2F2F2] text-center">
           Ready to Get Started?
