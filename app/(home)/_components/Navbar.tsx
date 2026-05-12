@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,18 +19,11 @@ const Navbar = () => {
       <div className="mx-auto max-w-[1200px]">
         {/* Main Navbar Container */}
         <div className="relative flex h-20 items-center justify-between rounded-2xl border border-white/10 bg-[#1A1C1E]/80 px-6 backdrop-blur-xl lg:px-10">
-          
+
           {/* Logo Section */}
           <div className="flex shrink-0 items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex flex-col leading-tight font-montserrat">
-                <span className="text-xl font-black italic tracking-tighter text-white">
-                  SHARP <span className="text-[#00FFA3]">MATRIX</span>
-                </span>
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#00FFA3]">
-                  AI
-                </span>
-              </div>
+            <Link href="/" className="flex flex-col items-center">
+              <Image src="/footer-image/Group 1171275819.svg" alt="Footer Logo" width={100} height={100} className="w-[55px] h-[42px]" />
             </Link>
           </div>
 
