@@ -88,7 +88,7 @@ const LoginPage = () => {
                   <input type="checkbox" className="accent-[#00FFA3] h-4 w-4 rounded" />
                   I agree to the Terms of Service and Privacy Policy
                 </label>
-                <Link href="#" className="text-sm font-medium text-[#00FFA3] hover:underline">
+                <Link href="/forgot-password" className="text-sm font-medium text-[#00FFA3] hover:underline">
                   Forgot password?
                 </Link>
               </div>
