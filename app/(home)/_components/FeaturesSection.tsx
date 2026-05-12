@@ -1,6 +1,6 @@
 "use client";
 
-import { Database, TrendingUp, Bot } from "lucide-react";
+
 
 const FeaturesSection = () => {
   const features = [
@@ -8,19 +8,39 @@ const FeaturesSection = () => {
       title: "Market Intelligence",
       description:
         "Real-time odds comparison, expected value calculations, and sharp money tracking across all major markets.",
-      icon: <Database className="text-[#00FF88]" size={40} />,
+      icon: (
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36 24C50.9117 24 63 19.9706 63 15C63 10.0294 50.9117 6 36 6C21.0883 6 9 10.0294 9 15C9 19.9706 21.0883 24 36 24Z" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 15V57C9 59.387 11.8446 61.6761 16.9081 63.364C21.9716 65.0518 28.8392 66 36 66C43.1608 66 50.0284 65.0518 55.0919 63.364C60.1554 61.6761 63 59.387 63 57V15" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 36C9 38.3869 11.8446 40.6761 16.9081 42.364C21.9716 44.0518 28.8392 45 36 45C43.1608 45 50.0284 44.0518 55.0919 42.364C60.1554 40.6761 63 38.3869 63 36" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
     {
       title: "Historical Edge",
       description:
         "Deep historical data analysis, trend identification, and pattern recognition to uncover systematic advantages.",
-      icon: <TrendingUp className="text-[#00FF88]" size={40} />,
+      icon: (
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M66 21L40.5 46.5L25.5 31.5L6 51" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M48 21H66V39" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
     {
       title: "SharpBot AI",
       description:
         "AI-powered assistant that explains complex data patterns in plain language, structured around facts.",
-      icon: <Bot className="text-[#00FF88]" size={40} />,
+      icon: (
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36 24V12H24" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M54 24H18C14.6863 24 12 26.6863 12 30V54C12 57.3137 14.6863 60 18 60H54C57.3137 60 60 57.3137 60 54V30C60 26.6863 57.3137 24 54 24Z" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6 42H12" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M60 42H66" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M45 39V45" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M27 39V45" stroke="#00FF88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
     },
   ];
 
