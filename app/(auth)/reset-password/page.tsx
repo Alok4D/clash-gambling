@@ -106,11 +106,23 @@ const ResetPassword = () => {
 
         {/* Bottom Link */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-gray-400">
+          <p 
+            style={{ 
+              fontFamily: 'Montserrat, sans-serif',
+              fontSize: '16px',
+              fontWeight: 500,
+              lineHeight: '24px',
+              color: '#B7B7B7'
+            }}
+          >
             Remember your password?{" "}
             <Link 
               href="/login" 
-              className="font-bold text-[#00FFA3] hover:underline"
+              style={{ 
+                color: '#00FF88',
+                fontWeight: 500
+              }}
+              className="hover:underline"
             >
               Log in
             </Link>

@@ -44,8 +44,29 @@ const LoginPage = () => {
                             </div>
                         </div>
 
-                        <h1 className="text-4xl font-bold md:text-5xl">Welcome back</h1>
-                        <p className="mt-4 max-w-md text-lg text-gray-400">
+                        <h1 
+                            style={{ 
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '40px',
+                                fontWeight: 700,
+                                lineHeight: '48px',
+                                color: '#F2F2F2',
+                                alignSelf: 'stretch'
+                            }}
+                        >
+                            Welcome back
+                        </h1>
+                        <p 
+                            style={{ 
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '20px',
+                                fontWeight: 400,
+                                lineHeight: '32px',
+                                color: '#B7B7B7',
+                                marginTop: '16px'
+                            }}
+                            className="max-w-md"
+                        >
                             Access your sports intelligence dashboard and continue making data-driven decisions.
                         </p>
 
@@ -147,9 +168,25 @@ const LoginPage = () => {
                             </button>
                         </form>
 
-                        <p className="mt-8 text-center text-gray-400">
-                            Don't have an account?{" "}
-                            <Link href="/signup" className="font-bold text-[#00FFA3] hover:underline">
+                        <p 
+                            style={{ 
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '16px',
+                                fontWeight: 500,
+                                lineHeight: '24px',
+                                color: '#B7B7B7'
+                            }}
+                            className="mt-8 text-center"
+                        >
+                            Don&apos;t have an account?{" "}
+                            <Link 
+                                href="/signup" 
+                                style={{ 
+                                    color: '#00FF88',
+                                    fontWeight: 500
+                                }}
+                                className="hover:underline"
+                            >
                                 Create account
                             </Link>
                         </p>
