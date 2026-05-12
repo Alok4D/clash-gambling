@@ -26,7 +26,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 md:px-0">
+    <section id="pricing" className="py-24 px-6 md:px-0">
       <div className="mx-auto max-w-[1200px]">
         {/* Background Typography & Heading */}
         <div className="relative mb-20 text-center">

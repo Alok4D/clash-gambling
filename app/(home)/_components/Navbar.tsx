@@ -7,11 +7,23 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If the link is an anchor on the current page
+    if (href.startsWith("/#") && window.location.pathname === "/") {
+      const id = href.replace("/#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: "smooth" });
+        setIsOpen(false);
+      }
+    }
+  };
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Sports", href: "/sports" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "Sports", href: "/#sports" },
+    { name: "Pricing", href: "/#pricing" },
   ];
 
   return (
@@ -33,12 +45,13 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 style={{
-                    color: '#FFF',
-                    fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
-                    fontSize: '16px',
-                    fontWeight: 500,
-                    lineHeight: '24px'
+                  color: '#FFF',
+                  fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                  fontSize: '16px',
+                  fontWeight: 500,
+                  lineHeight: '24px'
                 }}
                 className="transition-colors hover:text-[#00FFA3]"
               >
@@ -49,9 +62,9 @@ const Navbar = () => {
 
           {/* Log In Button (Desktop) */}
           <div className="hidden md:block">
-         <Link href="/login">
-            <button 
-              style={{
+            <Link href="/login">
+              <button
+                style={{
                   display: 'flex',
                   padding: 'var(--space-padding-8-px, 8px) var(--space-padding-space-between-desktop, 24px)',
                   justifyContent: 'center',
@@ -64,12 +77,12 @@ const Navbar = () => {
                   fontSize: 'var(--typography-scale-body-small, 14px)',
                   fontWeight: 500,
                   lineHeight: '24px'
-              }}
-              className="transition-all hover:opacity-90 active:scale-95 shadow-[0_0_15px_rgba(0,255,163,0.3)]"
-            >
-              Log In
-            </button>
-         </Link>
+                }}
+                className="transition-all hover:opacity-90 active:scale-95 shadow-[0_0_15px_rgba(0,255,163,0.3)]"
+              >
+                Log In
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -90,13 +103,13 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => scrollToSection(e, link.href)}
                 style={{
-                    color: '#FFF',
-                    fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
-                    fontSize: '18px',
-                    fontWeight: 500,
-                    lineHeight: '28px'
+                  color: '#FFF',
+                  fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                  fontSize: '18px',
+                  fontWeight: 500,
+                  lineHeight: '28px'
                 }}
                 className="hover:text-[#00FFA3]"
               >
@@ -104,21 +117,21 @@ const Navbar = () => {
               </Link>
             ))}
             <hr className="border-white/10" />
-            <button 
+            <button
               style={{
-                  display: 'flex',
-                  width: '100%',
-                  padding: '16px',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: '10px',
-                  borderRadius: 'var(--button-radius, 10px)',
-                  background: 'var(--button-primary, #0F8)',
-                  color: 'var(--button-text, #0B0F14)',
-                  fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
-                  fontSize: '18px',
-                  fontWeight: 700,
-                  lineHeight: '28px'
+                display: 'flex',
+                width: '100%',
+                padding: '16px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '10px',
+                borderRadius: 'var(--button-radius, 10px)',
+                background: 'var(--button-primary, #0F8)',
+                color: 'var(--button-text, #0B0F14)',
+                fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                fontSize: '18px',
+                fontWeight: 700,
+                lineHeight: '28px'
               }}
               className="active:scale-95 transition-all"
             >
