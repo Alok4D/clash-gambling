@@ -8,6 +8,7 @@ import QualityServices from "./_components/QualityServices ";
 import ClientTestimonials from "./_components/Testimonial";
 import Navbar from "./_components/Navbar";
 import FeaturesSection from "./_components/FeaturesSection";
+import GetStarted from "./GetStarted";
 
 
 
@@ -26,6 +27,7 @@ export default function page() {
       {/* Other Sections */}
       <div className="relative z-10 flex flex-col gap-10 bg-[#0A0C10]">
         <FeaturesSection />
+        <GetStarted />
         <QualityServices />
         <LatestNews />
         <ClientTestimonials />
