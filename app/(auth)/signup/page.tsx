@@ -4,120 +4,167 @@ import Image from "next/image";
 import SignupForm from "./_components/SignupForm";
 
 const SignupPage = () => {
-  const features = [
-    { title: "Expected Value Analysis", desc: "Identify +EV opportunities instantly" },
-    { title: "Sharp Money Tracking", desc: "Follow the smart money in real-time" },
-    { title: "Historical Data Access", desc: "Years of market data at your fingertips" },
-  ];
-
-  return (
-    <div 
-      style={{ 
-        backgroundImage: "url('/logo-bg.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundColor: "#0B0E11"
-      }}
-      className="min-h-screen w-full text-white selection:bg-[#00FFA3]/30"
-    >
-      <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 py-8 lg:px-20">
-        
-        {/* Navigation */}
-        <Link 
-          href="/" 
-          style={{ 
-            fontFamily: 'Montserrat, sans-serif',
-            fontSize: '16px',
-            fontWeight: 500,
-            lineHeight: '24px',
-            color: '#FFF'
-          }}
-          className="group inline-flex items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] border border-white transition-all hover:bg-white/10 w-fit"
+    return (
+        <div
+            style={{
+                backgroundImage: "url('/logo-bg.svg')",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundColor: "#0B0E11"
+            }}
+            className="min-h-screen w-full text-white selection:bg-[#00FFA3]/30"
         >
-          <ChevronLeft size={18} />
-          Back to home
-        </Link>
+            <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 py-8 lg:px-20">
 
-        <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center">
-          
-          {/* Left Column: Branding & Value Props */}
-          <div className="flex flex-col lg:w-1/2">
-            <div className="mb-8 max-w-[400px]">
-                        {/* Logo Placeholder */}
-                        <div className="flex justify-center items-center">
-                    <Image src="/login-logo.svg" alt="Logo"
-                    draggable={false}
-                    width={100} height={100} className="w-[131px] h-[96px]" />
-                        </div>
-                      </div>
-
-            <h1 
-              style={{ 
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '40px',
-                fontWeight: 700,
-                lineHeight: '48px',
-                color: '#F2F2F2',
-                alignSelf: 'stretch'
-              }}
-            >
-              Create Account
-            </h1>
-            <p 
-              style={{ 
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '20px',
-                fontWeight: 400,
-                lineHeight: '32px',
-                color: '#B7B7B7',
-                marginTop: '16px'
-              }}
-              className="max-w-md"
-            >
-              Access your sports intelligence dashboard and continue making data-driven decisions.
-            </p>
-
-            {/* Feature List */}
-            <div className="mt-10 space-y-4">
-              {features.map((f, i) => (
-                <div key={i} className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
-                  <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
-                  <div>
-                    <h4 
-                      style={{ 
+                {/* Back to Home Button */}
+                <Link
+                    href="/"
+                    style={{
                         fontFamily: 'Montserrat, sans-serif',
-                        fontSize: '20px',
-                        fontWeight: 400,
-                        lineHeight: '32px',
-                        color: '#F2F2F2'
-                      }}
-                    >
-                      {f.title}
-                    </h4>
-                    <p 
-                      style={{ 
-                        fontFamily: 'Montserrat, sans-serif',
-                        fontSize: '14px',
+                        fontSize: '16px',
                         fontWeight: 500,
                         lineHeight: '24px',
-                        color: '#B7B7B7'
-                      }}
-                    >
-                      {f.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                        color: '#FFF'
+                    }}
+                    className="group inline-flex items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] border border-white transition-all hover:bg-white/10 w-fit"
+                >
+                    <ChevronLeft size={18} />
+                    Back to home
+                </Link>
 
-          {/* Right Column: Signup Form */}
-          <SignupForm />
-        </main>
-      </div>
-    </div>
-  );
+                <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center">
+
+                    {/* Left Column: Branding & Features */}
+                    <div className="flex flex-col w-full">
+                        <div className="mb-8 max-w-[400px]">
+                            {/* Logo Placeholder */}
+                            <div className="flex justify-center items-center">
+                                <Image src="/login-logo.svg" alt="Logo"
+                                draggable={false}
+                                priority={true}
+                                width={100} height={100} className="w-full h-auto" />
+                            </div>
+                        </div>
+
+                        <h1 
+                            style={{ 
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '40px',
+                                fontWeight: 700,
+                                lineHeight: '48px',
+                                color: '#F2F2F2',
+                                alignSelf: 'stretch'
+                            }}
+                        >
+                            Welcome back
+                        </h1>
+                        <p 
+                            style={{ 
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '20px',
+                                fontWeight: 400,
+                                lineHeight: '32px',
+                                color: '#B7B7B7',
+                                marginTop: '16px'
+                            }}
+                            className="max-w-md"
+                        >
+                            Access your sports intelligence dashboard and continue making data-driven decisions.
+                        </p>
+
+                        {/* Feature Cards */}
+                        <div className="mt-12 space-y-4">
+                            <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
+                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                                <div>
+                                    <h4 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '20px',
+                                            fontWeight: 400,
+                                            lineHeight: '32px',
+                                            color: '#F2F2F2'
+                                        }}
+                                    >
+                                        Expected Value Analysis
+                                    </h4>
+                                    <p 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '14px',
+                                            fontWeight: 500,
+                                            lineHeight: '24px',
+                                            color: '#B7B7B7'
+                                        }}
+                                    >
+                                       Identify +EV opportunities instantly
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
+                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                                <div>
+                                    <h4 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '20px',
+                                            fontWeight: 400,
+                                            lineHeight: '32px',
+                                            color: '#F2F2F2'
+                                        }}
+                                    >
+                                       Sharp Money Tracking
+                                    </h4>
+                                    <p 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '14px',
+                                            fontWeight: 500,
+                                            lineHeight: '24px',
+                                            color: '#B7B7B7'
+                                        }}
+                                    >
+                                        Follow the smart money in real-time
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
+                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                                <div>
+                                    <h4 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '20px',
+                                            fontWeight: 400,
+                                            lineHeight: '32px',
+                                            color: '#F2F2F2'
+                                        }}
+                                    >
+                                       Historical Data Access
+                                    </h4>
+                                    <p 
+                                        style={{ 
+                                            fontFamily: 'Montserrat, sans-serif',
+                                            fontSize: '14px',
+                                            fontWeight: 500,
+                                            lineHeight: '24px',
+                                            color: '#B7B7B7'
+                                        }}
+                                    >
+                                        Years of market data at your fingertips
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column: Login Form */}
+                    <SignupForm />
+                </main>
+            </div>
+        </div>
+    );
 };
 
-export default SignupPage;
+export default SignupPage;
