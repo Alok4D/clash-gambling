@@ -1,15 +1,9 @@
-import Footer from "./_components/footer/Footer";
-import Intro from "./_components/Intro";
-import Communities from "./_components/Communities";
-import FeaturedProjects from "./_components/FeaturesSection";
-import LatestNews from "./_components/News";
-import NewsLetter from "./_components/NewsLetter";
-import QualityServices from "./_components/QualityServices ";
-import ClientTestimonials from "./_components/Testimonial";
 import Navbar from "./_components/Navbar";
+import Intro from "./_components/Intro";
 import FeaturesSection from "./_components/FeaturesSection";
 import GetStarted from "./GetStarted";
 import PricingSection from "./PricingSection";
+import Footer from "./_components/Footer";
 
 
 
@@ -30,10 +24,6 @@ export default function page() {
         <FeaturesSection />
         <GetStarted />
         <PricingSection />
-        <QualityServices />
-        <LatestNews />
-        <ClientTestimonials />
-        <NewsLetter />
         <Footer />
       </div>
     </main>
