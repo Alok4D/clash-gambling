@@ -1,12 +1,13 @@
 import Footer from "./_components/footer/Footer";
 import Intro from "./_components/Intro";
 import Communities from "./_components/Communities";
-import FeaturedProjects from "./_components/Featured";
+import FeaturedProjects from "./_components/FeaturesSection";
 import LatestNews from "./_components/News";
 import NewsLetter from "./_components/NewsLetter";
 import QualityServices from "./_components/QualityServices ";
 import ClientTestimonials from "./_components/Testimonial";
 import Navbar from "./_components/Navbar";
+import FeaturesSection from "./_components/FeaturesSection";
 
 
 
@@ -24,8 +25,7 @@ export default function page() {
       
       {/* Other Sections */}
       <div className="relative z-10 flex flex-col gap-10 bg-[#0A0C10]">
-        <FeaturedProjects />
-        <Communities />
+        <FeaturesSection />
         <QualityServices />
         <LatestNews />
         <ClientTestimonials />
