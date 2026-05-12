@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
@@ -40,12 +39,14 @@ const LoginPage = () => {
                     <div className="flex flex-col w-full">
                         <div className="mb-8 max-w-[400px]">
                             {/* Logo Placeholder */}
+                     <Link href={"/"}>
                             <div className="flex justify-center items-center">
                                 <Image src="/login-logo.svg" alt="Logo"
                                 draggable={false}
                                 priority={true}
                                 width={100} height={100} className="w-full h-auto" />
                             </div>
+                     </Link>
                         </div>
 
                         <h1 
@@ -157,4 +158,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default LoginPage;

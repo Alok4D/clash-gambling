@@ -147,9 +147,34 @@ const SignupForm = () => {
                 </button>
 
                 <div className="relative flex items-center py-2">
-                    <div className="flex-grow border-t border-white/10"></div>
-                    <span className="mx-4 flex-shrink text-sm text-gray-500">Or</span>
-                    <div className="flex-grow border-t border-white/10"></div>
+                    <div
+                        style={{
+                            width: '276px',
+                            height: '1px',
+                            background: 'linear-gradient(270deg, var(--primary-primary-100, #0F8) 0%, rgba(18, 18, 18, 0.00) 100%)'
+                        }}
+                        className="flex-grow"
+                    ></div>
+                    <span
+                        style={{
+                            color: '#FFF',
+                            fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                            fontSize: '16px',
+                            fontWeight: 500,
+                            lineHeight: '24px'
+                        }}
+                        className="mx-4 flex-shrink"
+                    >
+                        Or
+                    </span>
+                    <div
+                        style={{
+                            width: '276px',
+                            height: '1px',
+                            background: 'linear-gradient(90deg, var(--primary-primary-100, #0F8) 0%, rgba(18, 18, 18, 0.00) 100%)'
+                        }}
+                        className="flex-grow"
+                    ></div>
                 </div>
 
                 <button

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import SignupForm from "./_components/SignupForm";
 
@@ -17,34 +16,20 @@ const SignupPage = () => {
         >
             <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 py-8 lg:px-20">
 
-                {/* Back to Home Button */}
-                <Link
-                    href="/"
-                    style={{
-                        fontFamily: 'Montserrat, sans-serif',
-                        fontSize: '16px',
-                        fontWeight: 500,
-                        lineHeight: '24px',
-                        color: '#FFF'
-                    }}
-                    className="group inline-flex items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] border border-white transition-all hover:bg-white/10 w-fit"
-                >
-                    <ChevronLeft size={18} />
-                    Back to home
-                </Link>
-
                 <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center">
 
                     {/* Left Column: Branding & Features */}
                     <div className="flex flex-col w-full">
                         <div className="mb-8 max-w-[400px]">
                             {/* Logo Placeholder */}
-                            <div className="flex justify-center items-center">
+                         <Link href={'/'}>
+                              <div className="flex justify-center items-center">
                                 <Image src="/login-logo.svg" alt="Logo"
                                 draggable={false}
                                 priority={true}
                                 width={100} height={100} className="w-full h-auto" />
                             </div>
+                         </Link>
                         </div>
 
                         <h1 
