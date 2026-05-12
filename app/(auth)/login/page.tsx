@@ -15,7 +15,7 @@ const LoginPage = () => {
             }}
             className="min-h-screen w-full text-white selection:bg-[#00FFA3]/30"
         >
-            <div className="mx-auto flex min-h-screen max-w-[1200px] flex-col px-6 py-8 lg:px-20 border border-amber-200">
+            <div className="mx-auto flex min-h-screen max-w-[1200px] flex-col px-6 py-8 lg:px-20">
 
                 {/* Back to Home Button */}
                 <Link
@@ -33,7 +33,7 @@ const LoginPage = () => {
                     Back to home
                 </Link>
 
-                <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center border border-red-500">
+                <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center">
 
                     {/* Left Column: Branding & Features */}
                     <div className="flex flex-col lg:w-1/2">
@@ -127,7 +127,16 @@ const LoginPage = () => {
                                 <div className="flex-grow border-t border-white/10"></div>
                             </div>
 
-                            <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-white py-4 font-bold text-black transition-all hover:bg-gray-100">
+                            <button 
+                                style={{ 
+                                    fontFamily: 'Montserrat, sans-serif',
+                                    fontSize: '16px',
+                                    fontWeight: 500,
+                                    lineHeight: '24px',
+                                    color: '#0B0F14'
+                                }}
+                                className="flex w-full self-stretch items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] bg-white transition-all hover:bg-gray-100 active:scale-[0.98]"
+                            >
                                 <svg width="20" height="20" viewBox="0 0 24 24">
                                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
                                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
