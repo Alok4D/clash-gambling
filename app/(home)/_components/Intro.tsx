@@ -5,8 +5,8 @@ export default function Intro() {
     <section className="relative flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden">
       <div className="container mx-auto px-4 text-center z-10">
         {/* Hero Title */}
-        <h1 className="font-montserrat mx-auto mb-8 max-w-5xl text-5xl font-[900] tracking-tight text-white md:text-7xl lg:text-[5.5rem] leading-[1.1]">
-          Find +EV <span className="italic text-[#00FFA3]">Opportunities</span> <br />
+        <h1 className="font-montserrat mx-auto mb-8 max-w-5xl text-[40px] md:text-[72px] font-bold tracking-tight text-[#F2F2F2] leading-normal">
+          Find +EV <span className="italic text-[#00FF88] font-normal">Opportunities</span> <br />
           Before the Market Moves
         </h1>
 
