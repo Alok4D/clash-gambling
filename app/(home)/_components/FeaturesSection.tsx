@@ -1,4 +1,3 @@
-"use client";
 
 const FeaturesSection = () => {
   const features = [
@@ -43,7 +42,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="sports" className="bg-[#0B0E11] py-20 px-6">
+    <section id="sports" className="bg-[#0B0E11] py-20 px-6 scroll-mt-20">
       <div className="mx-auto max-w-[1200px]">
         {/* Header Section */}
         <div className="relative mb-16 text-center">

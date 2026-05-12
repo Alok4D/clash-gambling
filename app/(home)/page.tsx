@@ -12,7 +12,7 @@ export default function page() {
     <main className="relative min-h-screen w-full overflow-x-hidden bg-[#0A0C10]">
       {/* Hero Section with Background */}
       <div className="relative w-full bg-[url('/landing-page.svg')] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0C10]/20 to-[#0A0C10]" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#0A0C10]/20 to-[#0A0C10]" />
         <div className="relative z-10">
           <Navbar />
           <Intro />
@@ -20,7 +20,7 @@ export default function page() {
       </div>
       
       {/* Other Sections */}
-      <div className="relative z-10 flex flex-col gap-10 bg-[#0A0C10]">
+      <div className="relative z-5 flex flex-col gap-10 bg-[#0A0C10]">
         <FeaturesSection />
         <GetStarted />
         <PricingSection />
