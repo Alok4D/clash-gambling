@@ -11,7 +11,7 @@ export default function Intro() {
         </h1>
 
         {/* Hero Description */}
-        <p className="mx-auto mb-10 max-w-3xl text-lg text-white/70 md:text-xl font-medium leading-relaxed">
+        <p className="mx-auto mb-10 max-w-[946px] text-[18px] md:text-[24px] font-normal leading-[32px] text-[#B7B7B7] font-montserrat">
           Advanced sports analytics powered by real-time data, historical trends, and AI-driven insights. 
           Identify value where others see noise.
         </p>
