@@ -24,10 +24,10 @@ const PricingSection = () => {
       <div className="mx-auto max-w-[1200px]">
         {/* Background Typography & Heading */}
         <div className="relative mb-20 text-center">
-          <h2 className="absolute inset-0 flex items-center justify-center font-inter text-[40px] font-bold text-[#FFFFFF14] md:text-[100px] whitespace-nowrap tracking-wider">
+          <h2 className="absolute inset-0 flex items-center justify-center font-inter text-[40px] font-bold text-[#FFFFFF14] md:text-[100px] tracking-wider">
             Subscription plan
           </h2>
-          <h3 className="relative pt-8 text-3xl font-bold text-white md:pt-14 md:text-5xl">
+          <h3 className="font-montserrat relative pt-8 text-3xl font-bold text-[#F2F2F2] md:pt-14 md:text-[40px] leading-[48px]">
             Subscription plan
           </h3>
         </div>
