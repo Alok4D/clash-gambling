@@ -9,6 +9,7 @@ import ClientTestimonials from "./_components/Testimonial";
 import Navbar from "./_components/Navbar";
 import FeaturesSection from "./_components/FeaturesSection";
 import GetStarted from "./GetStarted";
+import PricingSection from "./PricingSection";
 
 
 
@@ -28,6 +29,7 @@ export default function page() {
       <div className="relative z-10 flex flex-col gap-10 bg-[#0A0C10]">
         <FeaturesSection />
         <GetStarted />
+        <PricingSection />
         <QualityServices />
         <LatestNews />
         <ClientTestimonials />
