@@ -30,10 +30,7 @@ const GetStarted = () => {
       </div>
 
       {/* Main CTA Card */}
-      <div className="relative z-10 flex w-full max-w-[840px] flex-col items-center justify-center gap-6 rounded-[28px] border border-[rgba(18,18,18,0)] bg-[#1B1B1B] px-6 py-7 shadow-[0_0_8px_0_rgba(0,255,163,0.20)] md:px-6 md:py-7">
-        
-        {/* Subtle Green Glow Top Center */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-[#00FFA3]/40 to-transparent" />
+      <div className="relative z-10 flex w-full max-w-[840px] flex-col items-center justify-center gap-6 rounded-[28px] border border-[#12121200] bg-[#1B1B1B] px-6 py-7 shadow-[0_0_8px_0_rgba(0,255,163,0.20)]">
 
         <h2 className="font-montserrat text-[28px] md:text-[40px] font-bold leading-[48px] text-[#F2F2F2] text-center">
           Ready to Get Started?
