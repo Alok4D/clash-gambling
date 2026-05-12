@@ -33,7 +33,7 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards Container */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="flex flex-wrap items-center justify-center gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -43,7 +43,7 @@ const PricingSection = () => {
             >
               {/* "Best Value" Badge */}
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-md bg-white px-4 py-1.5 text-sm font-bold text-black shadow-lg">
+                <div className="font-montserrat absolute left-[83.5px] top-[-16px] flex items-center justify-center gap-[10px] rounded-[4px] bg-white px-2 py-1 text-[14px] font-medium leading-[24px] text-[#121821]">
                   {plan.badge}
                 </div>
               )}
