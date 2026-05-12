@@ -1,279 +1,134 @@
 "use client";
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import countries from 'world-countries';
 
-import * as z from 'zod';
-import { Mail, Lock, User, Eye, EyeOff, ArrowLeft, Globe } from 'lucide-react';
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import Link from "next/link";
+import { ChevronLeft, User, Mail, Lock, EyeOff } from "lucide-react";
+import Image from "next/image";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+const SignupPage = () => {
+  const features = [
+    { title: "Expected Value Analysis", desc: "Identify +EV opportunities instantly" },
+    { title: "Sharp Money Tracking", desc: "Follow the smart money in real-time" },
+    { title: "Historical Data Access", desc: "Years of market data at your fingertips" },
+  ];
 
-// Import your images - assuming same background
-import bg from '@/public/auth/background.png';
-import createAccountImage from '@/public/auth/createAccountImage.png';
-import googleIcon from '@/public/auth/GoogleLogo.png';
-import { useRouter } from 'next/navigation';
-import { useCreateUserMutation } from '@/lib/features/user/userApi';
-import { toast } from 'sonner';
-import { Loader2 } from 'lucide-react';
-
-
-const signupSchema = z.object({
-    name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-    email: z.string().email({ message: "Invalid email address" }),
-    country: z.string().min(1, { message: "Please select a country" }),
-    password: z.string().min(8, { message: "Password must be at least 8 characters" }),
-    confirmPassword: z.string(),
-}).refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-});
-
-type SignupFormValues = z.infer<typeof signupSchema>;
-
-export const REGIONS = [
-    { code: "ALL", name: "All Regions", flag: "" },
-    ...countries.map((country) => ({
-        code: country.cca2,
-        name: country.name.common,
-        flag: country.flag,
-    })).sort((a, b) => a.name.localeCompare(b.name)),
-];
-
-
-export default function SignupPage() {
-
-    const [showPassword, setShowPassword] = useState(false);
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const router = useRouter();
-    const {
-        register,
-        handleSubmit,
-        control,
-        formState: { errors, isSubmitting },
-    } = useForm<SignupFormValues>({
-        resolver: zodResolver(signupSchema as any),
-        defaultValues: {
-            country: "ALL",
-        }
-
-    });
-
-
-    const [createUser, { isLoading: isCreatingUser }] = useCreateUserMutation();
-
-    const onSubmit = async (data: SignupFormValues) => {
-        const toastId = toast.loading("Creating your account...");
-        try {
-            // Map 'country' from form to 'passport' for API
-            const payload = {
-                name: data.name,
-                email: data.email,
-                password: data.password,
-                passport: data.country
-            };
-
-            const result = await createUser(payload).unwrap();
-
-            if (result.success) {
-                toast.success(result.message || "Account created successfully!", { id: toastId });
-                router.push('/login');
-            }
-        } catch (err: any) {
-            console.error("Signup error:", err);
-            toast.error(err?.data?.message || err?.message || "Failed to create account", { id: toastId });
-        }
-    };
-
-
-    return (
-        <div
-            className="min-h-screen w-full flex items-center justify-center relative overflow-hidden p-4 sm:p-6 lg:p-8 bg-[#f0f7ff]"
+  return (
+    <div className="min-h-screen w-full bg-[#0B0E11] text-white">
+      <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col px-6 py-8 lg:px-20">
+        
+        {/* Navigation */}
+        <Link 
+          href="/" 
+          className="group flex w-fit items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm transition-all hover:bg-white/10"
         >
-            {/* BACKGROUND PART */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={bg}
-                    alt="Background"
-                    fill
-                    priority
-                    className="object-cover"
-                    quality={100}
-                />
-            </div>
+          <ChevronLeft size={16} />
+          Back to home
+        </Link>
 
-            <div className="relative z-10 w-full max-w-[1440px] flex flex-col lg:flex-row items-center justify-center lg:gap-[50px] gap-10">
-
-                {/* LEFT SIDE: Signup Form Part */}
-                <div className="w-full max-w-[500px] p-5 flex flex-col gap-4 rounded-2xl border border-blue-500/25 bg-[#77AEE1]/5 shadow-[8px_8px_16px_0_rgba(119,174,225,0.20)] backdrop-blur-md transition-all shrink-0 animate__animated animate__fadeInLeft">
-                    <button className="mb-2 text-gray-400 hover:text-gray-800 transition-colors p-1 self-start">
-                        <Link href="/login"><ArrowLeft size={20} /></Link>
-                    </button>
-
-                    <div className="mb-3">
-                        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Create Your Account</h1>
-                        <p className="text-gray-500 text-xs sm:text-sm font-medium">Join us today and start managing your projects effortlessly.</p>
-                    </div>
-
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-full">
-
-                        {/* NAME FIELD */}
-                        <div className="space-y-1.5">
-                            <Label className="text-sm font-semibold text-gray-700 ml-1">Full Name</Label>
-                            <div className="relative group">
-                                <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={18} />
-                                <Input
-                                    {...register("name")}
-                                    className={`w-full pl-12 pr-4 h-12 bg-white border ${errors.name ? 'border-red-400' : 'border-[#77AEE1]/25'} rounded-[8px] focus-visible:ring-2 focus-visible:ring-blue-300 transition-all shadow-sm`}
-                                    placeholder="Leonmak roni"
-                                />
-                            </div>
-                            {errors.name && <p className="text-red-500 text-xs ml-1 font-medium">{errors.name.message}</p>}
+        <main className="mt-12 flex flex-1 flex-col justify-between gap-16 lg:flex-row lg:items-center">
+          
+          {/* Left Column: Branding & Value Props */}
+          <div className="flex flex-col lg:w-1/2">
+            <div className="mb-8 max-w-[400px]">
+                        {/* Logo Placeholder */}
+                        <div className="flex justify-center items-center">
+                    <Image src="/login-logo.svg" alt="Logo" width={100} height={100} className="w-[131px] h-[96px]" />
                         </div>
+                      </div>
 
-                        {/* EMAIL FIELD */}
-                        <div className="space-y-1.5">
-                            <Label className="text-sm font-semibold text-gray-700 ml-1">Email</Label>
-                            <div className="relative group">
-                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={18} />
-                                <Input
-                                    {...register("email")}
-                                    className={`w-full pl-12 pr-4 h-12 bg-white border ${errors.email ? 'border-red-400' : 'border-[#77AEE1]/25'} rounded-[8px] focus-visible:ring-2 focus-visible:ring-blue-300 transition-all shadow-sm`}
-                                    placeholder="damo@gmail.com"
-                                />
-                            </div>
-                            {errors.email && <p className="text-red-500 text-xs ml-1 font-medium">{errors.email.message}</p>}
-                        </div>
+            <h1 className="text-4xl font-bold md:text-5xl">Welcome back</h1>
+            <p className="mt-4 max-w-md text-lg text-gray-400">
+              Access your sports intelligence dashboard and continue making data-driven decisions.
+            </p>
 
-                        <div className="space-y-1.5">
-                            <Label className="text-sm font-semibold text-gray-700 ml-1">Passport Country</Label>
-                            <div className="relative group">
-                                <Controller
-                                    name="country"
-                                    control={control}
-                                    render={({ field }) => (
-                                        <Select onValueChange={field.onChange} value={field.value}>
-                                            <SelectTrigger className={`w-full px-4 h-12 bg-[#121212] border border-[#77AEE1]/20 rounded-[8px] focus:ring-2 focus:ring-blue-300 transition-all shadow-sm text-[#77AEE1] font-semibold text-sm sm:text-base`}>
-                                                <SelectValue placeholder="All Regions" />
-                                            </SelectTrigger>
-                                            <SelectContent className="max-h-80 bg-white">
-                                                {REGIONS.map((region) => (
-                                                    <SelectItem
-                                                        key={region.code}
-                                                        value={region.code}
-                                                        className="hover:bg-slate-100 cursor-pointer"
-                                                    >
-                                                        <div className="flex items-center gap-2">
-                                                            {region.flag && <span className="text-base">{region.flag}</span>}
-                                                            <span className="text-sm">{region.name}</span>
-                                                        </div>
-                                                    </SelectItem>
-                                                ))}
-                                            </SelectContent>
-                                        </Select>
-                                    )}
-                                />
-                            </div>
-                            {errors.country && <p className="text-red-500 text-xs ml-1 font-medium">{errors.country.message}</p>}
-                        </div>
-
-
-
-                        {/* PASSWORD FIELD */}
-                        <div className="space-y-1.5">
-                            <Label className="text-sm font-semibold text-gray-700 ml-1">Password</Label>
-                            <div className="relative group">
-                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={18} />
-                                <Input
-                                    {...register("password")}
-                                    type={showPassword ? "text" : "password"}
-                                    className={`w-full pl-12 pr-12 h-12 bg-white border ${errors.password ? 'border-red-400' : 'border-[#77AEE1]/25'} rounded-[8px] focus-visible:ring-2 focus-visible:ring-blue-300 transition-all shadow-sm`}
-                                    placeholder="••••••••"
-                                />
-                                <button
-                                    type="button"
-                                    onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-                                >
-                                    {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-                                </button>
-                            </div>
-                            {errors.password && <p className="text-red-500 text-xs ml-1 font-medium">{errors.password.message}</p>}
-                        </div>
-
-                        {/* CONFIRM PASSWORD FIELD */}
-                        <div className="space-y-1.5">
-                            <Label className="text-sm font-semibold text-gray-700 ml-1">Confirm Password</Label>
-                            <div className="relative group">
-                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={18} />
-                                <Input
-                                    {...register("confirmPassword")}
-                                    type={showConfirmPassword ? "text" : "password"}
-                                    className={`w-full pl-12 pr-12 h-12 bg-white border ${errors.confirmPassword ? 'border-red-400' : 'border-[#77AEE1]/25'} rounded-[8px] focus-visible:ring-2 focus-visible:ring-blue-300 transition-all shadow-sm`}
-                                    placeholder="••••••••"
-                                />
-                                <button
-                                    type="button"
-                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-                                >
-                                    {showConfirmPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-                                </button>
-                            </div>
-                            {errors.confirmPassword && <p className="text-red-500 text-xs ml-1 font-medium">{errors.confirmPassword.message}</p>}
-                        </div>
-
-                        <Button
-                            type="submit"
-                            disabled={isSubmitting || isCreatingUser}
-                            className="w-full bg-[#7fb3e4] hover:bg-[#6da2d3] text-white font-bold h-12 rounded-2xl shadow-lg transition-all active:scale-[0.98] disabled:opacity-70 mt-2 text-base flex items-center justify-center gap-2"
-                        >
-                            {isSubmitting || isCreatingUser ? (
-                                <>
-                                    <Loader2 className="h-5 w-5 animate-spin" />
-                                    <span>Creating account...</span>
-                                </>
-                            ) : (
-                                "Create Account"
-                            )}
-                        </Button>
-
-                    </form>
-
-
-                    <p className="text-center mt-4 sm:mt-6 text-xs sm:text-sm text-gray-500 w-full">
-                        Already have an account? <Link href="/login" className="text-blue-800 font-bold hover:underline">Log in</Link>
-                    </p>
+            {/* Feature List */}
+            <div className="mt-10 space-y-4">
+              {features.map((f, i) => (
+                <div key={i} className="flex items-center gap-4 rounded-2xl border border-[#00FFA3]/10 bg-[#00FFA3]/5 p-5">
+                  <div className="h-3 w-3 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                  <div>
+                    <h4 className="font-bold text-gray-100">{f.title}</h4>
+                    <p className="text-sm text-gray-400">{f.desc}</p>
+                  </div>
                 </div>
-
-                {/* RIGHT SIDE: Illustration Part */}
-                <div className="hidden md:flex items-center justify-center lg:mt-0 mt-8 animate__animated animate__fadeInRight">
-                    <div
-                        className="relative flex items-center justify-center shrink-0 w-[300px] h-[330px] sm:w-[450px] sm:h-[490px] lg:w-[610px] lg:h-[668px]"
-                    >
-                        <Image
-                            src={createAccountImage}
-                            alt="Signup Illustration"
-                            fill
-                            className="object-contain pointer-events-none"
-                            priority
-                        />
-                    </div>
-                </div>
-
+              ))}
             </div>
-        </div>
-    );
-}
+          </div>
+
+          {/* Right Column: Signup Form */}
+          <div className="flex flex-col lg:w-[480px]">
+            <h2 className="mb-8 text-center text-3xl font-bold lg:text-left lg:text-4xl">
+              Create your account
+            </h2>
+            
+            <form className="space-y-5">
+              {/* Full Name */}
+              <div className="space-y-1.5">
+                <label className="text-sm text-gray-400">Full name</label>
+                <div className="relative">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                  <input type="text" placeholder="Clash" className="w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-12 pr-4 outline-none focus:border-[#00FFA3]/50" />
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="space-y-1.5">
+                <label className="text-sm text-gray-400">Email address</label>
+                <div className="relative">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                  <input type="email" placeholder="you@example.com" className="w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-12 pr-4 outline-none focus:border-[#00FFA3]/50" />
+                </div>
+              </div>
+
+              {/* Password */}
+              <div className="space-y-1.5">
+                <label className="text-sm text-gray-400">Password</label>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                  <input type="password" placeholder="**********" className="w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-12 pr-12 outline-none focus:border-[#00FFA3]/50" />
+                  <EyeOff className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500" size={18} />
+                </div>
+              </div>
+
+              {/* Confirm Password */}
+              <div className="space-y-1.5">
+                <label className="text-sm text-gray-400">Confirm password</label>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                  <input type="password" placeholder="**********" className="w-full rounded-xl border border-white/10 bg-white/5 py-3.5 pl-12 pr-12 outline-none focus:border-[#00FFA3]/50" />
+                  <EyeOff className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500" size={18} />
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 py-2">
+                <input type="checkbox" className="mt-1 h-4 w-4 rounded accent-[#00FFA3]" />
+                <span className="text-sm text-gray-400">I agree to the Terms of Service and Privacy Policy</span>
+              </div>
+
+              <button className="w-full rounded-xl bg-[#00FFA3] py-4 text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.4)]">
+                Create account
+              </button>
+
+              <div className="relative flex items-center py-2">
+                <div className="flex-grow border-t border-white/10"></div>
+                <span className="mx-4 text-sm text-gray-500">Or</span>
+                <div className="flex-grow border-t border-white/10"></div>
+              </div>
+
+              <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-white py-4 font-bold text-black hover:bg-gray-100">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"/></svg>
+                Continue with Google
+              </button>
+            </form>
+
+            <p className="mt-8 text-center text-gray-400">
+              Already have an account?{" "}
+              <Link href="/login" className="font-bold text-[#00FFA3] hover:underline">Log In</Link>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default SignupPage;
