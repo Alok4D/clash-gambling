@@ -48,9 +48,11 @@ const Navbar = () => {
 
           {/* Log In Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="rounded-lg bg-[#00FFA3] px-8 py-2.5 text-sm font-bold text-black transition-all hover:bg-[#00e692] active:scale-95 shadow-[0_0_15px_rgba(0,255,163,0.3)]">
+         <Link href="/login">
+          <button className="rounded-lg bg-[#00FFA3] px-8 py-2.5 text-sm font-bold text-black transition-all hover:bg-[#00e692] active:scale-95 shadow-[0_0_15px_rgba(0,255,163,0.3)]">
               Log In
             </button>
+         </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
