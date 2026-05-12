@@ -108,7 +108,16 @@ const LoginPage = () => {
                                 </Link>
                             </div>
 
-                            <button className="w-full rounded-xl bg-[#00FFA3] py-4 text-lg font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.4)] active:scale-[0.98]">
+                            <button 
+                                style={{ 
+                                    fontFamily: 'Montserrat, sans-serif',
+                                    fontSize: '16px',
+                                    fontWeight: 500,
+                                    lineHeight: '24px',
+                                    color: '#0B0F14'
+                                }}
+                                className="flex w-full self-stretch items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] bg-[#00FF88] transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.4)] active:scale-[0.98]"
+                            >
                                 Log In
                             </button>
 
