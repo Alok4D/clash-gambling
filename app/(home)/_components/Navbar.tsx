@@ -33,7 +33,14 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-bold text-white/80 transition-colors hover:text-[#00FFA3]"
+                style={{
+                    color: '#FFF',
+                    fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                    fontSize: '16px',
+                    fontWeight: 500,
+                    lineHeight: '24px'
+                }}
+                className="transition-colors hover:text-[#00FFA3]"
               >
                 {link.name}
               </Link>
@@ -43,7 +50,23 @@ const Navbar = () => {
           {/* Log In Button (Desktop) */}
           <div className="hidden md:block">
          <Link href="/login">
-          <button className="rounded-lg bg-[#00FFA3] px-8 py-2.5 text-sm font-bold text-black transition-all hover:bg-[#00e692] active:scale-95 shadow-[0_0_15px_rgba(0,255,163,0.3)]">
+            <button 
+              style={{
+                  display: 'flex',
+                  padding: 'var(--space-padding-8-px, 8px) var(--space-padding-space-between-desktop, 24px)',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
+                  borderRadius: 'var(--button-radius, 10px)',
+                  background: 'var(--button-primary, #0F8)',
+                  color: 'var(--button-text, #0B0F14)',
+                  fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                  fontSize: 'var(--typography-scale-body-small, 14px)',
+                  fontWeight: 500,
+                  lineHeight: '24px'
+              }}
+              className="transition-all hover:opacity-90 active:scale-95 shadow-[0_0_15px_rgba(0,255,163,0.3)]"
+            >
               Log In
             </button>
          </Link>
@@ -68,13 +91,37 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-white hover:text-[#00FFA3]"
+                style={{
+                    color: '#FFF',
+                    fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                    fontSize: '18px',
+                    fontWeight: 500,
+                    lineHeight: '28px'
+                }}
+                className="hover:text-[#00FFA3]"
               >
                 {link.name}
               </Link>
             ))}
             <hr className="border-white/10" />
-            <button className="w-full rounded-xl bg-[#00FFA3] py-4 text-lg font-bold text-black">
+            <button 
+              style={{
+                  display: 'flex',
+                  width: '100%',
+                  padding: '16px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
+                  borderRadius: 'var(--button-radius, 10px)',
+                  background: 'var(--button-primary, #0F8)',
+                  color: 'var(--button-text, #0B0F14)',
+                  fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  lineHeight: '28px'
+              }}
+              className="active:scale-95 transition-all"
+            >
               Log In
             </button>
           </div>
