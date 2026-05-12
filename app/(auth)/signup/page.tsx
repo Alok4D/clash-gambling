@@ -80,8 +80,8 @@ const SignupPage = () => {
             {/* Feature List */}
             <div className="mt-10 space-y-4">
               {features.map((f, i) => (
-                <div key={i} className="flex items-center gap-4 rounded-2xl border border-[#00FFA3]/10 bg-[#00FFA3]/5 p-5">
-                  <div className="h-3 w-3 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                <div key={i} className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
+                  <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
                   <div>
                     <h4 className="font-bold text-gray-100">{f.title}</h4>
                     <p className="text-sm text-gray-400">{f.desc}</p>

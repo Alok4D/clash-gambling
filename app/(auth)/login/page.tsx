@@ -72,17 +72,17 @@ const LoginPage = () => {
 
                         {/* Feature Cards */}
                         <div className="mt-12 space-y-4">
-                            <div className="flex items-center gap-4 rounded-2xl border border-[#00FFA3]/10 bg-[#00FFA3]/5 p-5">
-                                <div className="h-3 w-3 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                            <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
+                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
                                 <div>
-                                    <h4 className="font-bold">Real-time Market Data</h4>
+                                    <h4 className="font-bold text-white">Real-time Market Data</h4>
                                     <p className="text-sm text-gray-400">Live odds and line movements</p>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-4 rounded-2xl border border-[#00FFA3]/10 bg-[#00FFA3]/5 p-5">
-                                <div className="h-3 w-3 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
+                            <div className="flex self-stretch items-start gap-[8px] p-[12px] rounded-[14px] bg-[#00FF88]/20 transition-all hover:bg-[#00FF88]/25">
+                                <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-[#00FFA3] shadow-[0_0_10px_#00FFA3]" />
                                 <div>
-                                    <h4 className="font-bold">AI-Powered Insights</h4>
+                                    <h4 className="font-bold text-white">AI-Powered Insights</h4>
                                     <p className="text-sm text-gray-400">SharpBot analysis on demand</p>
                                 </div>
                             </div>
