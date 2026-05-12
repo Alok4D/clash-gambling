@@ -55,19 +55,17 @@ const PricingSection = () => {
                 
                 <div className="min-h-[24px]">
                   {plan.features ? (
-                    <p className="text-sm text-gray-400">{plan.features}</p>
+                    <p className="font-montserrat text-[16px] font-medium leading-[24px] text-[#FFFFFF]">
+                      {plan.features}
+                    </p>
                   ) : (
-                    <div className="h-4" />
+                    <div className="h-[24px]" />
                   )}
                 </div>
 
-                <div className="mt-4">
-                  <span className="text-3xl font-bold text-white">
-                    {plan.price}
-                  </span>
-                  <span className="text-lg font-bold text-white opacity-80">
-                    {plan.period}
-                  </span>
+                <div className="font-montserrat mt-4 flex items-baseline gap-1 text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#F2F2F2]">
+                  <span>{plan.price}</span>
+                  <span className="text-lg opacity-80">{plan.period}</span>
                 </div>
               </div>
 
