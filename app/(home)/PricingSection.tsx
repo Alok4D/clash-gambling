@@ -69,7 +69,7 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <button className="w-full rounded-2xl bg-[#00FFA3] py-3 text-base font-bold text-black transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]">
+              <button className="font-montserrat flex w-full self-stretch items-center justify-center gap-[10px] rounded-[10px] bg-[#00FF88] px-6 py-[14px] text-[16px] font-medium leading-[24px] text-[#0B0F14] transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]">
                 Subscribe
               </button>
             </div>
