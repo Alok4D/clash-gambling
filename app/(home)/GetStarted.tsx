@@ -35,7 +35,7 @@ const GetStarted = () => {
         {/* Subtle Green Glow Top Center */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-[#00FFA3]/40 to-transparent" />
 
-        <h2 className="text-3xl font-bold text-white md:text-5xl lg:text-6xl">
+        <h2 className="font-montserrat text-[28px] md:text-[40px] font-bold leading-[48px] text-[#F2F2F2] text-center">
           Ready to Get Started?
         </h2>
         
