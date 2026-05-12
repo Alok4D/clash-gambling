@@ -8,19 +8,19 @@ const FeaturesSection = () => {
       title: "Market Intelligence",
       description:
         "Real-time odds comparison, expected value calculations, and sharp money tracking across all major markets.",
-      icon: <Database className="text-[#00FFA3]" size={28} />,
+      icon: <Database className="text-[#00FF88]" size={40} />,
     },
     {
       title: "Historical Edge",
       description:
         "Deep historical data analysis, trend identification, and pattern recognition to uncover systematic advantages.",
-      icon: <TrendingUp className="text-[#00FFA3]" size={28} />,
+      icon: <TrendingUp className="text-[#00FF88]" size={40} />,
     },
     {
       title: "SharpBot AI",
       description:
         "AI-powered assistant that explains complex data patterns in plain language, structured around facts.",
-      icon: <Bot className="text-[#00FFA3]" size={28} />,
+      icon: <Bot className="text-[#00FF88]" size={40} />,
     },
   ];
 
@@ -45,7 +45,7 @@ const FeaturesSection = () => {
               className="group rounded-2xl border border-white/5 bg-[#14181D] p-8 transition-all hover:border-[#00FFA3]/30"
             >
               {/* Icon Container */}
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#00FFA3]/10">
+              <div className="mb-8 flex h-[100px] w-[100px] shrink-0 items-center justify-center rounded-[28px] bg-[#00FF880A] px-3 aspect-square">
                 {feature.icon}
               </div>
 
