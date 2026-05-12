@@ -1,6 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import PaymentForm from "./PaymentForm";
+import { X } from "lucide-react";
+
 const PricingSection = () => {
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
   const plans = [
     {
       name: "Annual Plan",
@@ -69,13 +75,27 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <button className="font-montserrat flex w-full self-stretch items-center justify-center gap-[10px] rounded-[10px] bg-[#00FF88] px-6 py-[14px] text-[16px] font-medium leading-[24px] text-[#0B0F14] transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]">
+              <button 
+                onClick={() => setIsPaymentModalOpen(true)}
+                className="font-montserrat flex w-full self-stretch items-center justify-center gap-[10px] rounded-[10px] bg-[#00FF88] px-6 py-[14px] text-[16px] font-medium leading-[24px] text-[#0B0F14] transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]"
+              >
                 Subscribe
               </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Payment Modal */}
+      {isPaymentModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-md">
+            <div className="max-h-[90vh] overflow-y-auto rounded-[14px]">
+              <PaymentForm onClose={() => setIsPaymentModalOpen(false)} />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
