@@ -46,6 +46,10 @@ Clash-Gambling is a premium sports analytics and gambling platform designed for 
 - **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (Radix UI)
 - **Forms**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 - **Data Visualization**: [Recharts](https://recharts.org/)
+- **Typography**: 
+  - **Montserrat**: Main brand and heading font.
+  - **Manrope**: Primary UI and body font.
+  - **Inter**: System/Interface utility font.
 
 ## 📖 How to Run Locally
 
