@@ -7,6 +7,7 @@ import { LineMovementChart } from '../_component/LineMovementChart';
 import Betting from '../_component/Betting';
 import { KeyStats } from '../_component/KeyStats';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function GameAnalysis() {
 
@@ -29,8 +30,12 @@ export default function GameAnalysis() {
             <p className="text-xs text-gray-500">Chase Center, San Francisco</p>
           </div>
           <div className="flex flex-wrap gap-3 w-full md:w-auto">
-            <button className="flex-1 md:flex-none bg-[#00FF85] text-black font-bold px-6 py-2.5 rounded-lg text-sm transition-all hover:bg-[#00E678]">Ask SharpBot</button>
+         <Link href={"/user-dashboard/sharp-bot"}>
+          <button className="flex-1 md:flex-none bg-[#00FF85] text-black font-bold px-6 py-2.5 rounded-lg text-sm transition-all hover:bg-[#00E678]">Ask SharpBot</button>
+         </Link>
+       <Link href={"/user-dashboard/saved"}>
             <button className="flex-1 md:flex-none bg-[#161B22] border border-gray-800 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-all hover:bg-[#1c222b]">Save Game</button>
+       </Link>
           </div>
         </div>
 
