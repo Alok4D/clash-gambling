@@ -1,40 +1,65 @@
-# Clash Admin Dashboard & Landing Page - Implementation Updates
+# Clash-Gambling Platform
 
-## 🎨 Design & Typography
-- **Montserrat Font Integration**: Successfully integrated the Montserrat font family across the entire project (Landing Page & Dashboard) to match brand identity.
-- **Logo & Branding**: 
-  - Standardized the "Sharp Matrix AI" identity with high-fidelity vector logos in the Footer and Navbar.
-  - Applied specific typography specs for branding (Italic, Black weight, and Neon highlights).
-- **Copyright & Text Styling**: Applied professional typography to the Footer (Montserrat, 16px, Medium weight, #F2F2F2).
+Clash-Gambling is a premium sports analytics and gambling platform designed for serious bettors. It leverages AI-driven insights and real-time data to help users identify +EV (Expected Value) opportunities before the market moves.
 
-## 🚀 Landing Page Development
-- **Hero & Intro Section**: Built a high-impact intro with glassmorphism effects and sharp typography.
-- **Features & Pricing**: 
-  - Implemented a responsive Features grid.
-  - Designed interactive Pricing cards with "Save" badges and neon green highlights (#00FFA3).
-- **Decorative Patterns**: Integrated complex SVG background patterns (Group 2.svg) anchored to the bottom-right of the footer for a premium textured look.
-- **Performance Optimization**: Converted the Footer into a Server Component to optimize load times and SEO.
-- **Payment Integration**: Integrated a functional `PaymentForm` for seamless user checkout.
+## 🚀 Key Features
 
-## 🚀 Dashboard & Interactive Components
-- **Subscription Management**:
-  - **Invite User Modal**: Built a custom interactive modal with backdrop blur and duration selection (7, 30, 90 days, Unlimited).
-  - **Edit Subscription Modal**: Implemented a responsive edit interface for plan management.
-  - **Subscription Cards**: Refined the dashboard's subscription display cards for better clarity.
-- **Account Settings**:
-  - **Profile Photo Upload**: Enabled interactive photo selection and preview from local storage.
-  - **Password Visibility**: Fixed the password toggle functionality using React state management.
-  - **Responsive Layout**: Reorganized settings inputs into a mobile-friendly grid system.
+### 💎 Premium Landing Page
+- **High-Impact UI**: Modern dark-theme design with neon highlights, vibrant gradients, and glassmorphism.
+- **How It Works**: Interactive sections explaining the platform's unique value proposition.
+- **Flexible Pricing**: Multiple subscription tiers with seamless payment integration via a custom modal.
+- **Performance Optimized**: Built with Next.js Server Components for fast load times and SEO.
 
-## 📊 Data Visualization & Tables
-- **Shadcn UI Table Migration**: Replaced legacy HTML tables with modern Shadcn UI Table components.
-  - **Benefits**: Improved responsiveness, built-in horizontal scrolling, and standardized styling.
-  - **Design Retention**: Maintained original dark theme colors (#0D1117 background) and hover states (#161B22).
+### 📊 User Dashboard
+- **Market Overview**: Comprehensive display of current sports markets and betting lines.
+- **Game Analysis**: Deep-dive analytics for specific matches, including line movement charts and key performance indicators.
+- **SharpBot (AI Assistant)**: An integrated AI consultant that provides real-time insights and data-driven recommendations.
+- **Saved Games**: Bookmark specific games to track their movement and outcomes.
+- **Subscription Management**: Complete control over plans, billing, and access levels.
+- **Personalized Account**: Profile management with photo uploads, security settings, and responsive layout.
 
-## 📱 Responsiveness & UX
-- **Header Responsiveness**: Optimized the dashboard header to stack on mobile devices, ensuring the "Invite User" button remains accessible.
-- **Cross-Platform Navigation**: Ensured the Navbar and Footer are fully responsive and consistent across both the Landing Page and Dashboard.
-- **Navigation Shortcuts**: Integrated direct links from the Header Avatar to the Account Settings page for faster navigation.
+### 🛠️ Admin Dashboard
+- **User Administration**: Professional-grade table to manage the entire user base with filtering and sorting.
+- **Subscription Controls**: Advanced tools for inviting users and managing subscription durations (7, 30, 90 days, or Unlimited).
+- **Responsive Management**: Fully optimized admin interface that remains functional on mobile devices.
+
+### 🔐 Authentication System
+- **Secure Auth Flow**: Professional-grade Login and Signup interfaces with robust validation.
+- **Password Recovery**: Integrated "Forgot Password" and "Reset Password" flows with email-style interaction.
+- **Security Features**: Real-time validation feedback and secure password visibility toggles.
+
+## 🛠️ Technology Stack
+
+- **Core**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (Radix UI)
+- **Forms**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **Data Visualization**: [Recharts](https://recharts.org/)
+
+## 📖 How to Run Locally
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   pnpm dev
+   ```
+
+4. **Build for production**:
+   ```bash
+   pnpm build
+   ```
 
 ---
-*Last Updated: May 12, 2026*
+*Empowering bettors with data-driven precision and AI-powered insights.*
