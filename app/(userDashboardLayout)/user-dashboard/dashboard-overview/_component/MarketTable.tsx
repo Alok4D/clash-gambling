@@ -69,7 +69,9 @@ export const MarketTable = ({ data }: { data: MarketRow[] }) => (
             </TableCell>
             <TableCell className="px-4 py-5 h-auto border-none">
               <div className="flex justify-center gap-3 text-gray-500">
+              <Link href="/user-dashboard/saved">
                 <Bookmark size={18} className="cursor-pointer hover:text-white" />
+              </Link>
                 <Link href="/user-dashboard/dashboard-overview/game-analysis">
                   <Eye size={18} className="cursor-pointer hover:text-white" />
                 </Link>

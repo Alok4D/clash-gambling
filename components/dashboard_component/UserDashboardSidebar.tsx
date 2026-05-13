@@ -10,8 +10,8 @@ import {
   Menu,
   LayoutGrid,
   User,
-  DollarSign,
   Bot,
+  Bookmark,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -51,7 +51,7 @@ export function UserDashboardSidebar() {
 
   const menuItems = [
     { title: "Dashboard", icon: LayoutGrid, href: "/user-dashboard" },
-    { title: "Saved", icon: LayoutGrid, href: "/user-dashboard/saved" },
+    { title: "Saved", icon: Bookmark, href: "/user-dashboard/saved" },
     { title: "Sharp Bot", icon: Bot, href: "/user-dashboard/sharp-bot" },
     { title: "Account", icon: User, href: "/user-dashboard/account" },
   ];
