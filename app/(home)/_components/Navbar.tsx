@@ -108,7 +108,7 @@ const Navbar = () => {
                   color: '#FFF',
                   fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
                   fontSize: '18px',
-                  fontWeight: 500,
+                  fontWeight: 400,
                   lineHeight: '28px'
                 }}
                 className="hover:text-[#00FFA3]"
@@ -117,6 +117,7 @@ const Navbar = () => {
               </Link>
             ))}
             <hr className="border-white/10" />
+          <Link href={"/login"}>
             <button
               style={{
                 display: 'flex',
@@ -130,13 +131,14 @@ const Navbar = () => {
                 color: 'var(--button-text, #0B0F14)',
                 fontFamily: 'var(--text-style-text-style, Montserrat), sans-serif',
                 fontSize: '18px',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: '28px'
               }}
               className="active:scale-95 transition-all"
             >
               Log In
             </button>
+    </Link>
           </div>
         )}
       </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <section className="relative flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center pt-32 overflow-hidden">
       <div className="container mx-auto px-4 text-center z-10">
         {/* Hero Title */}
         <h1 className="font-montserrat mx-auto mb-8 max-w-5xl text-[40px] md:text-[72px] font-bold tracking-tight text-[#F2F2F2] leading-normal">
@@ -28,9 +28,9 @@ export default function Intro() {
         </div>
 
         {/* Dashboard Preview Image */}
-        <div className="relative mx-auto max-w-[1100px] group">
+        <div className="relative mx-auto max-w-[1146px] group">
           {/* Enhanced Outer Glow */}
-          <div className="absolute -inset-10 bg-[#00FFA3]/15 blur-[120px] opacity-60 group-hover:opacity-80 transition-opacity" />
+          {/* <div className="absolute -inset-10 bg-[#00FFA3]/15 blur-[120px] opacity-60 group-hover:opacity-80 transition-opacity" /> */}
           
           <div className="relative overflow-hidden rounded-3xl  border-white/10 bg-[#0A0C10]/40 shadow-2xl backdrop-blur-sm">
              <Image 
