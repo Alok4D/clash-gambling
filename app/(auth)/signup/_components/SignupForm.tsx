@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Mail, Lock, EyeOff, Eye, User } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SignupForm = () => {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -62,6 +64,7 @@ const SignupForm = () => {
         if (validate()) {
             // Handle signup logic here
             console.log("Signup submitted:", formData);
+            router.push("/login");
         }
     };
 
