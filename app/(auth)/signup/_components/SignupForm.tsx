@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const SignupForm = () => {
+    
     const router = useRouter();
     const [formData, setFormData] = useState({
         fullName: "",
