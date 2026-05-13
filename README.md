@@ -2,6 +2,12 @@
 
 Clash-Gambling is a premium sports analytics and gambling platform designed for serious bettors. It leverages AI-driven insights and real-time data to help users identify +EV (Expected Value) opportunities before the market moves.
 
+## 🔗 Live Project Links
+
+- **Main Website**: [https://clash-gambling.vercel.app](https://clash-gambling.vercel.app)
+- **User Dashboard**: [https://clash-gambling.vercel.app/user-dashboard](https://clash-gambling.vercel.app/user-dashboard)
+- **Admin Dashboard**: [https://clash-gambling.vercel.app/dashboard](https://clash-gambling.vercel.app/dashboard)
+
 ## 🚀 Key Features
 
 ### 💎 Premium Landing Page
