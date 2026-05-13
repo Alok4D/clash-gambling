@@ -2,8 +2,8 @@ import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Intro from "./_components/Intro";
 import FeaturesSection from "./_components/FeaturesSection";
-import GetStarted from "./GetStarted";
-import PricingSection from "./PricingSection";
+import GetStarted from "./_components/GetStarted";
+import PricingSection from "./_components/PricingSection";
 import Footer from "./_components/Footer";
 
 export default function page() {
@@ -23,13 +23,13 @@ export default function page() {
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#0A0C10]/20 to-[#0A0C10]" />
         </div>
-
+        
         <div className="relative z-10">
           <Navbar />
           <Intro />
         </div>
       </div>
-      
+
       {/* Other Sections */}
       <div className="relative z-5 flex flex-col gap-10 bg-[#0A0C10]">
         <FeaturesSection />

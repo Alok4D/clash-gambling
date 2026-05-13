@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import PaymentForm from "./PaymentForm";
-import { X } from "lucide-react";
 
 const PricingSection = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
@@ -43,9 +42,8 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative flex h-[319px] w-full max-w-[259px] flex-col items-start gap-[48px] rounded-[12px] border border-[#1F2630] bg-[#121821] px-5 py-6 transition-all hover:border-[#00FFA3]/20 ${
-                plan.highlight ? "ring-1 ring-[#00FFA3]/10" : ""
-              }`}
+              className={`relative flex h-[319px] w-full max-w-[259px] flex-col items-start gap-[48px] rounded-[12px] border border-[#1F2630] bg-[#121821] px-5 py-6 transition-all hover:border-[#00FFA3]/20 ${plan.highlight ? "ring-1 ring-[#00FFA3]/10" : ""
+                }`}
             >
               {/* "Best Value" Badge */}
               {plan.badge && (
@@ -58,7 +56,7 @@ const PricingSection = () => {
                 <h4 className="font-montserrat text-[24px] md:text-[32px] font-semibold leading-[40px] text-[#FFFFFF]">
                   {plan.name}
                 </h4>
-                
+
                 <div className="min-h-[24px]">
                   {plan.features ? (
                     <p className="font-montserrat text-[16px] font-medium leading-[24px] text-[#FFFFFF]">
@@ -75,7 +73,7 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={() => setIsPaymentModalOpen(true)}
                 className="font-montserrat flex w-full self-stretch items-center justify-center gap-[10px] rounded-[10px] bg-[#00FF88] px-6 py-[14px] text-[16px] font-medium leading-[24px] text-[#0B0F14] transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.3)] active:scale-[0.98]"
               >

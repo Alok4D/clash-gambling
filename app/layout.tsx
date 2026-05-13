@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Clash Gambling Platform",
+  title: "Clash-Gambling",
   description: "Experience thrilling clash gambling games, exciting challenges, and competitive gameplay in one place.",
 };
 

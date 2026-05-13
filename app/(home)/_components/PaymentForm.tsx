@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, CreditCard, ChevronDown, X } from "lucide-react";
+import {  CreditCard, ChevronDown, X } from "lucide-react";
 
 interface PaymentFormProps {
   onClose?: () => void;
