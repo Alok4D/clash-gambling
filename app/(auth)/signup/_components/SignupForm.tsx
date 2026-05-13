@@ -5,7 +5,65 @@ import { Mail, Lock, EyeOff, Eye, User } from "lucide-react";
 import Link from "next/link";
 
 const SignupForm = () => {
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
+    const [agreed, setAgreed] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [errors, setErrors] = useState<{
+        fullName?: string;
+        email?: string;
+        password?: string;
+        confirmPassword?: string;
+        agreed?: string;
+    }>({});
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        if (errors[name as keyof typeof errors]) {
+            setErrors(prev => ({ ...prev, [name]: undefined }));
+        }
+    };
+
+    const validate = () => {
+        const newErrors: typeof errors = {};
+        if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
+        
+        if (!formData.email) {
+            newErrors.email = "Email address is required";
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = "Please enter a valid email address";
+        }
+
+        if (!formData.password) {
+            newErrors.password = "Password is required";
+        } else if (formData.password.length < 6) {
+            newErrors.password = "Password must be at least 6 characters long";
+        }
+
+        if (formData.confirmPassword !== formData.password) {
+            newErrors.confirmPassword = "Passwords do not match";
+        }
+
+        if (!agreed) {
+            newErrors.agreed = "You must agree to the terms";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validate()) {
+            // Handle signup logic here
+            console.log("Signup submitted:", formData);
+        }
+    };
 
     return (
         <div className="flex flex-col w-full">
@@ -24,7 +82,7 @@ const SignupForm = () => {
                 Create your account
             </h2>
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                     <label
                         style={{
@@ -40,11 +98,21 @@ const SignupForm = () => {
                     <div className="relative">
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                         <input
-                            type="email"
+                            type="text"
+                            name="fullName"
+                            value={formData.fullName}
+                            onChange={handleChange}
                             placeholder="John Doe"
-                            className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/[0.08] ${
+                                errors.fullName ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
+                            }`}
                         />
                     </div>
+                    {errors.fullName && (
+                        <p className="text-red-500 text-[12px] mt-1 ml-1 animate-in fade-in slide-in-from-top-1 duration-200">
+                            {errors.fullName}
+                        </p>
+                    )}
                 </div>
                 <div className="space-y-2">
                     <label
@@ -62,10 +130,20 @@ const SignupForm = () => {
                         <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                         <input
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             placeholder="you@example.com"
-                            className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/[0.08] ${
+                                errors.email ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
+                            }`}
                         />
                     </div>
+                    {errors.email && (
+                        <p className="text-red-500 text-[12px] mt-1 ml-1 animate-in fade-in slide-in-from-top-1 duration-200">
+                            {errors.email}
+                        </p>
+                    )}
                 </div>
 
                 <div className="space-y-2">
@@ -84,8 +162,13 @@ const SignupForm = () => {
                         <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                         <input
                             type={showPassword ? "text" : "password"}
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
                             placeholder="**********"
-                            className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:bg-white/[0.08] ${
+                                errors.password ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
+                            }`}
                         />
                         <button
                             type="button"
@@ -95,6 +178,11 @@ const SignupForm = () => {
                             {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
                         </button>
                     </div>
+                    {errors.password && (
+                        <p className="text-red-500 text-[12px] mt-1 ml-1 animate-in fade-in slide-in-from-top-1 duration-200">
+                            {errors.password}
+                        </p>
+                    )}
                 </div>
                 <div className="space-y-2">
                     <label
@@ -112,8 +200,13 @@ const SignupForm = () => {
                         <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
                         <input
                             type={showPassword ? "text" : "password"}
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
                             placeholder="**********"
-                            className="w-full rounded-[10px] border border-white/10 bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:border-[#00FFA3]/50 focus:bg-white/[0.08]"
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:bg-white/[0.08] ${
+                                errors.confirmPassword ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
+                            }`}
                         />
                         <button
                             type="button"
@@ -123,17 +216,35 @@ const SignupForm = () => {
                             {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
                         </button>
                     </div>
+                    {errors.confirmPassword && (
+                        <p className="text-red-500 text-[12px] mt-1 ml-1 animate-in fade-in slide-in-from-top-1 duration-200">
+                            {errors.confirmPassword}
+                        </p>
+                    )}
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="space-y-2">
                     <label className="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
-                        <input type="checkbox" className="accent-[#00FFA3] h-4 w-4 rounded" />
+                        <input
+                            type="checkbox"
+                            checked={agreed}
+                            onChange={(e) => {
+                                setAgreed(e.target.checked);
+                                if (errors.agreed) setErrors({ ...errors, agreed: undefined });
+                            }}
+                            className="accent-[#00FFA3] h-4 w-4 rounded"
+                        />
                         I agree to the Terms of Service and Privacy Policy
                     </label>
-
+                    {errors.agreed && (
+                        <p className="text-red-500 text-[12px] animate-in fade-in slide-in-from-top-1 duration-200">
+                            {errors.agreed}
+                        </p>
+                    )}
                 </div>
 
                 <button
+                    type="submit"
                     style={{
                         fontFamily: 'Montserrat, sans-serif',
                         fontSize: '16px',
@@ -143,7 +254,7 @@ const SignupForm = () => {
                     }}
                     className="flex w-full self-stretch items-center justify-center gap-[10px] px-[28px] py-[14px] rounded-[10px] bg-[#00FF88] transition-all hover:bg-[#00e692] hover:shadow-[0_0_20px_rgba(0,255,163,0.4)] active:scale-[0.98]"
                 >
-                    Log In
+                    Create Account
                 </button>
 
                 <div className="relative flex items-center py-2">
@@ -178,6 +289,7 @@ const SignupForm = () => {
                 </div>
 
                 <button
+                    type="button"
                     style={{
                         fontFamily: 'Montserrat, sans-serif',
                         fontSize: '16px',
