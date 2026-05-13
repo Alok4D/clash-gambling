@@ -24,7 +24,7 @@ export const UserTable = ({ entries }: UserTableProps) => {
     <div className="bg-[#0D1117] border border-[#1F2937] rounded-xl overflow-hidden">
       <Table>
         <TableHeader>
-          <TableRow className="text-gray-400 font-medium text-sm border-b border-[#1F2937] hover:bg-transparent">
+          <TableRow className="text-gray-400 font-bold text-lg border-b border-[#1F2937] hover:bg-transparent">
             <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">User name</TableHead>
             <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">Email</TableHead>
             <TableHead className="px-6 py-5 font-normal text-gray-400 h-auto">Access Type</TableHead>

@@ -28,7 +28,7 @@ export const SubscriptionCard = ({
       />
       
       {isBestValue && (
-        <div className="absolute -top-3 left-15 z-10">
+        <div className="absolute -top-3 left-22 z-10">
           <span className="bg-white text-black text-[11px] font-medium px-3 py-1 rounded-sm shadow-lg">
             Best Value
           </span>
