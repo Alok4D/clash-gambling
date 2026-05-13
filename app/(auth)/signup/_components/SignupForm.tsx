@@ -106,7 +106,7 @@ const SignupForm = () => {
                             value={formData.fullName}
                             onChange={handleChange}
                             placeholder="John Doe"
-                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/[0.08] ${
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/8 ${
                                 errors.fullName ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
                             }`}
                         />
@@ -137,7 +137,7 @@ const SignupForm = () => {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder="you@example.com"
-                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/[0.08] ${
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/8 ${
                                 errors.email ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
                             }`}
                         />
@@ -169,7 +169,7 @@ const SignupForm = () => {
                             value={formData.password}
                             onChange={handleChange}
                             placeholder="**********"
-                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:bg-white/[0.08] ${
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:bg-white/8 ${
                                 errors.password ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
                             }`}
                         />
@@ -207,7 +207,7 @@ const SignupForm = () => {
                             value={formData.confirmPassword}
                             onChange={handleChange}
                             placeholder="**********"
-                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:bg-white/[0.08] ${
+                            className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[48px] outline-none transition-all focus:bg-white/8 ${
                                 errors.confirmPassword ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
                             }`}
                         />
@@ -267,7 +267,7 @@ const SignupForm = () => {
                             height: '1px',
                             background: 'linear-gradient(270deg, var(--primary-primary-100, #0F8) 0%, rgba(18, 18, 18, 0.00) 100%)'
                         }}
-                        className="flex-grow"
+                        className="grow"
                     ></div>
                     <span
                         style={{
@@ -277,7 +277,7 @@ const SignupForm = () => {
                             fontWeight: 500,
                             lineHeight: '24px'
                         }}
-                        className="mx-4 flex-shrink"
+                        className="mx-4 shrink"
                     >
                         Or
                     </span>
@@ -287,7 +287,7 @@ const SignupForm = () => {
                             height: '1px',
                             background: 'linear-gradient(90deg, var(--primary-primary-100, #0F8) 0%, rgba(18, 18, 18, 0.00) 100%)'
                         }}
-                        className="flex-grow"
+                        className="grow"
                     ></div>
                 </div>
 

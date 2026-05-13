@@ -50,7 +50,7 @@ const ForgotPasswordForm = () => {
                             if (error) setError(undefined);
                         }}
                         placeholder="you@example.com"
-                        className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/[0.08] ${
+                        className={`w-full rounded-[10px] border bg-white/5 py-[14px] pl-12 pr-[28px] outline-none transition-all focus:bg-white/8 ${
                             error ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#00FFA3]/50"
                         }`}
                     />
